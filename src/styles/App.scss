@@ -1,0 +1,144 @@
+@use "./partials/normalize" as *;
+@use "./partials/variables" as *;
+@use "./partials/typography" as *;
+@use "./partials/mixins" as *;
+
+.BMX {
+  &__video {
+    &--ctvl {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &--image {
+      width: 100%;
+      height: 26rem;
+      margin-bottom: 1rem;
+    }
+
+    &--heading {
+      &-text {
+        @include mobile-padding;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        @include mob-page-header-font($primary-color2);
+        font-family: "avenir-regular";
+        line-height: 1.5;
+      }
+    }
+    &--channel-timestamp {
+
+      &-text {
+        @include mobile-padding;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        @include mob-body-font($primary-color2);
+        font-family: "avenir-regular";
+        line-height: 1.5;
+      }
+    }
+    &--view-like {
+      display: flex;
+      flex-direction: column;
+    }
+    &--view {
+      display: flex;
+      flex-direction: row;
+      &-text {
+        @include mobile-padding;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        @include mob-body-font($primary-color2);
+        font-family: "avenir-regular";
+        line-height: 1.5;
+      }
+    }
+    &--like {
+      display: flex;
+      flex-direction: row;
+      &-text {
+        @include mobile-padding;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        @include mob-body-font($primary-color2);
+        font-family: "avenir-regular";
+        line-height: 1.5;
+      }
+    }
+    &--desc {
+      &-text {
+        @include mobile-padding;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        @include mob-body-font($primary-color2);
+        font-family: "avenir-regular";
+        line-height: 1.5;
+      }
+    }
+    &--comment {
+      display: flex;
+      flex-direction: column;
+      &-heading {
+        @include mob-body-font($primary-color2);
+        @include mobile-padding;
+        // &-text{
+
+        // }
+      }
+      &-user{
+        display: flex;
+        flex-direction: row;
+      }
+      &-img {
+        height: 10rem;
+        width: 15%;
+        &-stamp {
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 50%;
+        }
+      }
+      &-name-timestamp-active {
+        display: flex;
+        flex-direction:column;
+        width:85%;
+        @include mob-body-font($primary-color2);
+        @include mobile-padding;
+        padding-bottom: 0;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      &-name-timestamp {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include mob-body-font($primary-color2);
+        @include mobile-padding;
+        padding-left: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+      &-active {
+        @include mob-body-font($primary-color2);
+        @include mobile-padding;
+        line-height: 1.5;
+        padding-bottom: 0;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+//   &__next-video{
+//     height:8rem;
+// &-div{
+// height:8rem;
+// }
+//   }
+}

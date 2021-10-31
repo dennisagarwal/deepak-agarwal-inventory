@@ -1,0 +1,68 @@
+@use "./partials/normalize" as *;
+@use "./partials/variables" as *;
+@use "./partials/typography" as *;
+@use "./partials/mixins" as *;
+
+.comment {
+  // width: 100%;
+  &-heading {
+    @include mob-body-font($primary-color2);
+    @include mobile-padding;
+  }
+  &__img-textarea-btn {
+    display: flex;
+    flex-direction: column;
+  }
+  &__img-textarea {
+    display: flex;
+    flex-direction: row;
+  }
+  &__textarea {
+    @include mobile-padding;
+    border-radius: .25rem;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+    width: 85%;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    &{
+&-element{
+  border-radius: .5rem;
+  background-color: $primary-color4;
+  @include mob-body-font($primary-color2);
+  @include mobile-padding;
+  resize: none;
+      }
+    }
+  }
+  &__img {
+    width: 15%;
+    height: 10rem;
+    &--mohan {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+    }
+  }
+}
+
+.Btn__addComment {
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  background-color: $primary-color1;
+  height: 3rem;
+  display: flex;
+
+  @include mobile-padding;
+  padding-top: 0;
+  padding-bottom: 0;
+  &--img {
+    border-radius: 0.5rem;
+    padding: 0;
+    background-color: $primary-color1;
+  }
+}

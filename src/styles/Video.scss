@@ -1,0 +1,45 @@
+@use "./partials/normalize" as *;
+@use "./partials/variables" as *;
+@use "./partials/typography" as *;
+@use "./partials/mixins" as *;
+
+.BMX {
+  &__next-article {
+    display: flex;
+    flex-direction: row;
+  }
+  &__next-section {
+    width: 100%;
+    display: flex;
+    @include mobile-padding;
+    &-div {
+      width:50%;
+      &--img {
+        height: 10rem;
+        width: 100%;
+        border-radius: 0.5rem;
+      }
+    }
+    &-div--details {
+      display: flex;
+      flex-direction: column;
+      @include mobile-padding;
+      padding-top: 0;
+      padding-bottom: 0;
+      width: 50%;
+      &-heading {
+        @include mob-body-font($primary-color2);
+        line-height: 1.5;
+        font-family: "avenir-bold";
+        margin-top: 0;
+      }
+      &-text{
+        @include mob-body-font($primary-color2);
+        line-height: 1.5;
+        font-family: "avenir-regular";
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

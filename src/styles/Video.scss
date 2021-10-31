@@ -19,15 +19,25 @@
     width: 100%;
     display: flex;
     @include mobile-padding;
-    // @include desktop{
-    //   width:100%;
-    // }
+    @include desktop{
+      height:5rem;
+      width:100%;
+      padding-right:0;
+      padding-left:0;
+      padding-bottom:0;
+    }
     &-div {
       width: 50%;
+      @include desktop{
+        width: 30%;
+      }
       &--img {
         height: 10rem;
         width: 100%;
         border-radius: 0.5rem;
+          @include desktop{
+      height: 100%;
+    }
       }
     }
     &-div--details {
@@ -42,6 +52,9 @@
         line-height: 1.5;
         font-family: "avenir-bold";
         margin-top: 0;
+        @include desktop{
+          font-size: 1rem;
+        }
       }
       &-text {
         @include mob-body-font($primary-color2);

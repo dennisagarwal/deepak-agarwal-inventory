@@ -101,8 +101,7 @@ class App extends React.Component {
                 </div>
                 <div className="BMX__video--comment-name-timestamp-active">
                   <div className="BMX__video--comment-name-timestamp">
-                    <p>{comment.name}</p>
-
+                    <p className="BMX__video--comment-name-timestamp-text1">{comment.name}</p>
                     <p>{comment.timestamp}</p>
                   </div>
                   <div className="BMX__video--comment-active">

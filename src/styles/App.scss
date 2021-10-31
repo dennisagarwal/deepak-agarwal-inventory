@@ -52,6 +52,7 @@
         // width: 100%;
         object-fit: contain;
         background-color: $primary-color5;
+        margin-bottom: 4rem;
       }
       &-element {
         // width: 100%;
@@ -83,7 +84,7 @@
       @include desktop {
         //bmx active video heading for desktop
         padding-left: 18rem;
-        width: 100%;
+        width: 70%;
       }
     }
     &--channel-timestamp {
@@ -222,6 +223,9 @@
         padding-left: 0;
         padding-bottom: 0;
         padding-top: 0;
+        &-text1{
+          font-family: "avenir-bold";
+        }
       }
       &-active {
         @include mob-body-font($primary-color2);

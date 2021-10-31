@@ -8,7 +8,7 @@
   border-bottom: 1px solid $primary-color4;
   @include desktop {
     width: 70%;
-    padding-left: 18rem;
+    margin-left: 18rem;
   }
   &-heading {
     @include mob-body-font($primary-color2);
@@ -24,6 +24,9 @@
     flex-direction: row;
     @include tablet {
       height: 6rem;
+    }
+    @include desktop {
+      margin-bottom:3rem;
     }
   }
   &__textarea-subtext {

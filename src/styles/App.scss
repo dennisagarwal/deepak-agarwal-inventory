@@ -10,14 +10,34 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      @include tablet{
+      @include tablet {
         padding-bottom: 1rem;
       }
     }
     &--image {
-      width: 100%;
-      height: 26rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
       margin-bottom: 1rem;
+      @include tablet {
+        object-fit: contain;
+        background-color: $primary-color5;
+
+      }
+      @include desktop {
+        object-fit: contain;
+        background-color: $primary-color5;
+
+      }
+        &-element {
+          // width: 100%;
+          height: 26rem;
+          // margin-bottom: 1rem;
+
+          @include desktop {
+
+          }
+        }
 
     }
 
@@ -30,11 +50,9 @@
         margin-top: 0;
         @include mob-page-header-font($primary-color2);
         line-height: 1.5;
-
       }
     }
     &--channel-timestamp {
-
       &-text {
         @include mobile-padding;
         padding-top: 0;
@@ -44,10 +62,18 @@
         font-family: "avenir-regular";
         line-height: 1.5;
       }
+      @include tablet {
+        display: flex;
+        flex-direction: row;
+      }
     }
     &--view-like {
       display: flex;
       flex-direction: column;
+      @include tablet {
+        display: flex;
+        flex-direction: row;
+      }
     }
     &--view {
       display: flex;
@@ -96,7 +122,7 @@
 
         // }
       }
-      &-user{
+      &-user {
         display: flex;
         flex-direction: row;
         border-bottom: 1px solid $primary-color4;
@@ -115,15 +141,14 @@
       }
       &-name-timestamp-active {
         display: flex;
-        flex-direction:column;
-        width:85%;
+        flex-direction: column;
+        width: 85%;
         @include mob-body-font($primary-color2);
         @include mobile-padding;
         padding-bottom: 0;
         padding-top: 0;
         padding-left: 0;
         padding-right: 0;
-
       }
       &-name-timestamp {
         display: flex;
@@ -146,10 +171,10 @@
       }
     }
   }
-//   &__next-video{
-//     height:8rem;
-// &-div{
-// height:8rem;
-// }
-//   }
+  //   &__next-video{
+  //     height:8rem;
+  // &-div{
+  // height:8rem;
+  // }
+  //   }
 }

@@ -32,12 +32,13 @@ class App extends React.Component {
     return (
       <section>
         <Header />
+        <div className="BMX__video--image">
         <video
-          className="BMX__video--image"
+          className="BMX__video--image-element"
           poster={this.state.activeVideo.image}
           controls
         ></video>
-
+</div>
         <div className="BMX__video--heading">
           <p className="BMX__video--heading-text">
             {this.state.activeVideo.title}

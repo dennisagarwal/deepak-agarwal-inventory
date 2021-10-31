@@ -109,8 +109,10 @@ class App extends React.Component {
             );
           })}
         </div>
-        <h2>Next Videos</h2>
-        <section>
+        <div className="next-video__heading">
+        <h2 className="next-video__heading--text">Next Videos</h2>
+        </div>
+        <section className="next-video__section">
           {this.state.videos.map((video) => {
             return (
               <Video

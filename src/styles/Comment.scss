@@ -111,3 +111,17 @@
     background-color: $primary-color1;
   }
 }
+
+.next-video{
+  &__heading{
+    &--text{
+      @include tablet-padding;
+      padding-bottom: 0;
+
+    }
+  }
+  &__section{
+    @include tablet-padding;
+    padding-top:0;
+  }
+}

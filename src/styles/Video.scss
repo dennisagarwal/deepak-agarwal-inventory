@@ -4,9 +4,13 @@
 @use "./partials/mixins" as *;
 
 .BMX {
+
   &__next-article {
     display: flex;
     flex-direction: row;
+    @include tablet{
+      width: 50%;
+    }
   }
   &__next-section {
     width: 100%;
@@ -37,8 +41,13 @@
         @include mob-body-font($primary-color2);
         line-height: 1.5;
         font-family: "avenir-regular";
+        margin-top: auto;
         padding-bottom: 0;
         margin-bottom: 0;
+        @include tablet{
+
+          // padding-top: auto;
+        }
       }
     }
   }

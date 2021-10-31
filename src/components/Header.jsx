@@ -4,6 +4,7 @@ import mohanImage from "../assets/images/Mohan-muruge.jpg";
 import "../styles/Header.scss";
 import Btn from "./Btn";
 import upload from '.././assets/icons/upload.svg';
+import search from ".././assets/icons/search.svg";
 
 
 export default function Header() {
@@ -14,14 +15,18 @@ export default function Header() {
       </h1>
       <form className="main-header__form">
         <div className="main-header__form-input-img">
+        <div className="main-header__form-input-search-img">
+        <img className="main-header__form-input-search-img--element" src={search} alt="search-image" />
           <input
             className="main-header__form-input"
             type="text"
             id="search"
             name="search"
-            placeholder="search"
+            placeholder="Search"
           />
-          <img className="main-header__form-img" src={mohanImage} alt="profile image" />
+        </div>
+        <img className="main-header__form-img" src={mohanImage} alt="profile image" />
+
         </div>
         <div className="Btn__upload">
         <img className="Btn__upload--img" src={upload} alt="upload-image" />

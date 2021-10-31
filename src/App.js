@@ -113,7 +113,7 @@ class App extends React.Component {
         <div className="next-video__heading">
         <h2>Next Videos</h2>
         </div>
-        <section>
+        <section className="next-video__section">
           {this.state.videos.map((video) => {
             return (
               <Video

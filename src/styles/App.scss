@@ -14,7 +14,9 @@
         padding-bottom: 1rem;
       }
       @include desktop {
+        //ctvl display in desktop section
         padding-left: 18rem;
+        width: 45%;
       }
     }
     &--image {
@@ -57,11 +59,13 @@
         line-height: 1.5;
         @include desktop {
           @include tab-section-header-font($primary-color2);
+
         }
 
       }
       @include desktop {
         padding-left: 18rem;
+        width: 45%;
       }
     }
     &--channel-timestamp {
@@ -115,7 +119,9 @@
     }
     &--desc {
       @include desktop {
+         //description section in desktop for active videos
         padding-left: 18rem;
+        width: 45%;
       }
       &-text {
         @include mobile-padding;
@@ -131,7 +137,9 @@
       display: flex;
       flex-direction: column;
       @include desktop {
+        //comment user comment section in desktop
         padding-left: 18rem;
+        width: 45%;
       }
       &-heading {
         @include mob-body-font($primary-color2);
@@ -195,4 +203,33 @@
   // height:8rem;
   // }
   //   }
+}
+
+
+.next-video {
+  @include desktop{
+    width:40%;
+    display: flex;
+
+  }
+  &__heading {
+    @include tablet-padding;
+    padding-bottom: 0;
+    padding-left: 1rem;
+    @include desktop{
+      padding: 0;
+      display: inline-block;
+      width:30%;
+    }
+
+    &--text {
+      margin: 0;
+    }
+  }
+  &__section{
+    @include desktop{
+      display: inline-block;
+      width:100%;
+    }
+  }
 }

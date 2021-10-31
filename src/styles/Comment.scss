@@ -7,6 +7,7 @@
   // width: 100%;
   border-bottom: 1px solid $primary-color4;
   @include desktop {
+    width: 45%;
     padding-left: 18rem;
   }
   &-heading {
@@ -17,24 +18,22 @@
   &__img-textarea-btn {
     display: flex;
     flex-direction: column;
-
   }
   &__img-textarea {
     display: flex;
     flex-direction: row;
-     @include tablet{
-
-    height: 6rem;
+    @include tablet {
+      height: 6rem;
     }
   }
-  &__textarea-subtext{
-    @include tablet{
+  &__textarea-subtext {
+    @include tablet {
       width: 65%;
     }
   }
   &__textarea {
     @include mobile-padding;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     padding-top: 0;
     padding-right: 0;
     padding-left: 0;
@@ -42,14 +41,14 @@
     justify-content: space-around;
     display: flex;
     flex-direction: column;
-    @include tablet{
-      width:100%;
+    @include tablet {
+      width: 100%;
       display: flex;
-    flex-direction:row;
-    height: 4rem;
-    // padding: 0;
+      flex-direction: row;
+      height: 4rem;
+      // padding: 0;
     }
-    &__subtext{
+    &__subtext {
       @include mob-body-font($primary-color6);
       @include mobile-padding;
       padding-top: 0;
@@ -57,21 +56,20 @@
       padding-bottom: 0;
       margin-top: 0;
     }
-&-element{
-  border-radius: .5rem;
-  background-color: $primary-color4;
-  @include mob-body-font($primary-color2);
-  @include mobile-padding;
-  resize: none;
-  @include tablet{
-    width:100%;
+    &-element {
+      border-radius: 0.5rem;
+      background-color: $primary-color4;
+      @include mob-body-font($primary-color2);
+      @include mobile-padding;
+      resize: none;
+      @include tablet {
+        width: 100%;
 
-  height: 1rem;
+        height: 1rem;
 
-  // padding: 0;
-  }
+        // padding: 0;
       }
-
+    }
   }
   &__img {
     width: 15%;
@@ -83,7 +81,7 @@
       @include mobile-padding;
       padding-top: 0;
     }
-    @include tablet{
+    @include tablet {
       height: 4rem;
       width: 10%;
       padding-right: 0;
@@ -104,7 +102,7 @@
   @include mobile-padding;
   padding-top: 0;
   padding-bottom: 0;
-  @include tablet{
+  @include tablet {
     width: 15%;
     margin-top: 2rem;
   }
@@ -115,17 +113,14 @@
   }
 }
 
-.next-video{
-  &__heading{
-    @include tablet-padding;
-    padding-bottom: 0;
-    padding-left:1rem;
+// .next-video {
+//   &__heading {
+//     @include tablet-padding;
+//     padding-bottom: 0;
+//     padding-left: 1rem;
 
-    &--text{
-      margin:0;
-
-
-    }
-  }
-
-}
+//     &--text {
+//       margin: 0;
+//     }
+//   }
+// }

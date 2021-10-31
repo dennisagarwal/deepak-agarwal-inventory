@@ -9,6 +9,7 @@
   &-heading {
     @include mob-body-font($primary-color2);
     @include mobile-padding;
+    padding-bottom: 0;
   }
   &__img-textarea-btn {
     display: flex;
@@ -28,7 +29,14 @@
     justify-content: space-around;
     display: flex;
     flex-direction: column;
-    &{
+    &__subtext{
+      @include mob-body-font($primary-color6);
+      @include mobile-padding;
+      padding-top: 0;
+      padding-left: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+    }
 &-element{
   border-radius: .5rem;
   background-color: $primary-color4;
@@ -36,7 +44,7 @@
   @include mobile-padding;
   resize: none;
       }
-    }
+
   }
   &__img {
     width: 15%;

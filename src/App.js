@@ -82,9 +82,9 @@ class App extends React.Component {
         </div>
         <Comment />
         <div className="BMX__video--comment">
-          <div className="BMX__video--comment-heading">
+          {/* <div className="BMX__video--comment-heading">
             <h2 className="BMX__video--comment-heading-text">3 Comments</h2>
-          </div>
+          </div> */}
           {this.state.activeVideo.comments.map((comment) => {
             return (
               <div className="BMX__video--comment-user" key={comment.id}>

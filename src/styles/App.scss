@@ -17,17 +17,17 @@
 
     }
 
-    &--heading {
-      &-text {
-        @include mobile-padding;
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-top: 0;
-        @include mob-page-header-font($primary-color2);
-        font-family: "avenir-regular";
-        line-height: 1.5;
-      }
-    }
+    // &--heading {
+    //   &-text {
+    //     @include mobile-padding;
+    //     padding-top: 0;
+    //     padding-bottom: 0;
+    //     margin-top: 0;
+    //     @include mob-page-header-font($primary-color2);
+    //     font-family: "avenir-regular";
+    //     line-height: 1.5;
+    //   }
+    // }
     &--channel-timestamp {
 
       &-text {

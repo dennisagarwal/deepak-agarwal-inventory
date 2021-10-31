@@ -12,13 +12,16 @@
     }
     @include desktop {
     display: flex;
-    // width: 40%;
+    width: 100%;
     }
   }
   &__next-section {
     width: 100%;
     display: flex;
     @include mobile-padding;
+    // @include desktop{
+    //   width:100%;
+    // }
     &-div {
       width: 50%;
       &--img {

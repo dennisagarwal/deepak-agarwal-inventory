@@ -3,6 +3,23 @@
 @use "./partials/typography" as *;
 @use "./partials/mixins" as *;
 
+.page{
+  @include desktop{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  &-left{
+    @include desktop{
+      width:70%;
+    }
+  }
+  &-right{
+    @include desktop{
+      width: 30%;
+    }
+}}
+
 .BMX {
   &__video {
     &--ctvl {
@@ -16,7 +33,7 @@
       @include desktop {
         //ctvl display in desktop section
         padding-left: 18rem;
-        width: 45%;
+        width: 70%;
       }
     }
     &--image {
@@ -28,24 +45,21 @@
       @include tablet {
         object-fit: contain;
         background-color: $primary-color5;
-
       }
       @include desktop {
         // width: 100%;
         object-fit: contain;
         background-color: $primary-color5;
-
       }
-        &-element {
-          // width: 100%;
-          height: 26rem;
-          // margin-bottom: 1rem;
+      &-element {
+        // width: 100%;
+        height: 26rem;
+        // margin-bottom: 1rem;
 
-          // @include desktop {
+        // @include desktop {
 
-          // }
-        }
-
+        // }
+      }
     }
 
     &--heading {
@@ -59,13 +73,12 @@
         line-height: 1.5;
         @include desktop {
           @include tab-section-header-font($primary-color2);
-
         }
-
       }
       @include desktop {
+        //bmx active video heading for desktop
         padding-left: 18rem;
-        width: 45%;
+        width: 100%;
       }
     }
     &--channel-timestamp {
@@ -119,9 +132,9 @@
     }
     &--desc {
       @include desktop {
-         //description section in desktop for active videos
+        //description section in desktop for active videos
         padding-left: 18rem;
-        width: 45%;
+        width: 70%;
       }
       &-text {
         @include mobile-padding;
@@ -139,7 +152,7 @@
       @include desktop {
         //comment user comment section in desktop
         padding-left: 18rem;
-        width: 45%;
+        width: 70%;
       }
       &-heading {
         @include mob-body-font($primary-color2);
@@ -205,29 +218,29 @@
   //   }
 }
 
-
 .next-video {
-  @include desktop{
-    width:40%;
+  @include desktop {
+    width: 100%;
     display: flex;
-
+    padding: 0;
   }
   &__heading {
     @include tablet-padding;
     padding-bottom: 0;
     padding-left: 1rem;
-    @include desktop{
+    @include desktop {
       padding: 0;
-      display: inline-block;
-      width:30%;
+      display:flex;
+      width: 100%;
     }
 
     &--text {
       margin: 0;
     }
   }
-  &__section{
-    @include desktop{
+  &__section {
+    @include desktop {
+      padding: 0;
       display: inline-block;
       width:100%;
     }

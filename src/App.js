@@ -30,7 +30,8 @@ class App extends React.Component {
     const { activeVideo } = this.state;
     console.log(activeVideo);
     return (
-      <section>
+      <section >
+
         <Header />
         <div className="BMX__video--image">
         <video
@@ -39,6 +40,8 @@ class App extends React.Component {
           controls
         ></video>
 </div>
+<section className="page">
+ <div className="page-left">
         <div className="BMX__video--heading">
           <p className="BMX__video--heading-text">
             {this.state.activeVideo.title}
@@ -110,6 +113,8 @@ class App extends React.Component {
             );
           })}
         </div>
+        </div>
+        <div className="page-right">
         <div className="next-video__heading">
         <h2>Next Videos</h2>
         </div>
@@ -127,6 +132,8 @@ class App extends React.Component {
             );
           })}
         </section>
+        </div>
+      </section>
       </section>
     );
   }

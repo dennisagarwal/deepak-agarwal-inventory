@@ -5,6 +5,7 @@
 
 .comment {
   // width: 100%;
+  border-bottom: 1px solid $primary-color4;
   &-heading {
     @include mob-body-font($primary-color2);
     @include mobile-padding;
@@ -44,6 +45,8 @@
       width: 3.5rem;
       height: 3.5rem;
       border-radius: 50%;
+      @include mobile-padding;
+      padding-top: 0;
     }
   }
 }

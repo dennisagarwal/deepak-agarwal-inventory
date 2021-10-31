@@ -14,6 +14,7 @@
       width: 100%;
       height: 26rem;
       margin-bottom: 1rem;
+
     }
 
     &--heading {
@@ -93,6 +94,7 @@
       &-user{
         display: flex;
         flex-direction: row;
+        border-bottom: 1px solid $primary-color4;
       }
       &-img {
         height: 10rem;
@@ -101,6 +103,9 @@
           width: 3.5rem;
           height: 3.5rem;
           border-radius: 50%;
+          @include mobile-padding;
+          padding-top: 0;
+          margin-top: 1rem;
         }
       }
       &-name-timestamp-active {
@@ -113,6 +118,7 @@
         padding-top: 0;
         padding-left: 0;
         padding-right: 0;
+
       }
       &-name-timestamp {
         display: flex;

@@ -25,6 +25,10 @@ export default function Header() {
             placeholder="Search"
           />
         </div>
+        <div className="Btn__upload2">
+        <img className="Btn__upload2--img" src={upload} alt="upload-image" />
+        <Btn text="UPLOAD" />
+        </div>
         <img className="main-header__form-img" src={mohanImage} alt="profile image" />
 
         </div>

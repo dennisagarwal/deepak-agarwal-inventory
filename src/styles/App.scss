@@ -31,6 +31,10 @@
       justify-content: space-between;
       @include tablet {
         padding-bottom: 1rem;
+//ctvl display in tablet section
+          margin-left: 2rem;
+          margin-right: 2rem;
+
       }
       @include desktop {
         //ctvl display in desktop section
@@ -81,6 +85,10 @@
           @include tab-section-header-font($primary-color2);
           margin-top: 3rem;
         }
+      }
+      @include tablet {
+      margin-left: 2rem;
+      margin-right: 2rem;
       }
       @include desktop {
         //bmx active video heading for desktop
@@ -157,6 +165,11 @@
       }
     }
     &--desc {
+      @include tablet {
+        //description section in desktop for active videos
+        margin-left: 2rem;
+       margin-right: 2rem;
+      }
       @include desktop {
         //description section in desktop for active videos
         padding-left: 18rem;

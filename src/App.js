@@ -49,10 +49,10 @@ class App extends React.Component {
         </div>
         <div className="BMX__video--ctvl">
           <div className="BMX__video--channel-timestamp">
-            <p className="BMX__video--channel-timestamp-text">
-              {this.state.activeVideo.channel}
+            <p className="BMX__video--channel-timestamp-text1">
+              { "By " + this.state.activeVideo.channel}
             </p>
-            <p className="BMX__video--channel-timestamp-text">
+            <p className="BMX__video--channel-timestamp-text2">
               {newDate1.toLocaleDateString()}
             </p>
           </div>

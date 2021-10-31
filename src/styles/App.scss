@@ -34,7 +34,7 @@
       }
       @include desktop {
         //ctvl display in desktop section
-        padding-left: 18rem;
+        margin-left: 18rem;
         width: 70%;
       }
     }
@@ -52,7 +52,7 @@
         // width: 100%;
         object-fit: contain;
         background-color: $primary-color5;
-        margin-bottom: 4rem;
+        // margin-bottom: 4rem;
       }
       &-element {
         // width: 100%;
@@ -79,6 +79,7 @@
         line-height: 1.5;
         @include desktop {
           @include tab-section-header-font($primary-color2);
+          margin-top: 3rem;
         }
       }
       @include desktop {

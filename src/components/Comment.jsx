@@ -23,6 +23,7 @@ export default function Comment() {
             />
           </div>
           <div className="comment__textarea">
+          <div className="comment__textarea-subtext">
           <h3 className="comment__textarea__subtext">Join The Conversation</h3>
 
             <textarea
@@ -31,6 +32,7 @@ export default function Comment() {
               cols="50"
               placeholder="Add a new comment"
             />
+            </div>
             <div className="Btn__addComment">
               <img
                 className="Btn__addComment--img"
@@ -39,6 +41,7 @@ export default function Comment() {
               />
               <Btn text="COMMENT" />
             </div>
+
           </div>
         </div>
       </div>

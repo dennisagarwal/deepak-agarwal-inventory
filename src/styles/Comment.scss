@@ -6,6 +6,9 @@
 .comment {
   // width: 100%;
   border-bottom: 1px solid $primary-color4;
+  @include desktop {
+    padding-left: 18rem;
+  }
   &-heading {
     @include mob-body-font($primary-color2);
     @include mobile-padding;

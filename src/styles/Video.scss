@@ -11,6 +11,9 @@
     @include tablet{
       width: 50%;
     }
+    // @include desktop {
+    //   padding-left: 18rem;
+    // }
   }
   &__next-section {
     width: 100%;

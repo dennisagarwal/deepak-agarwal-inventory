@@ -6,6 +6,8 @@
 .comment {
   // width: 100%;
   border-bottom: 1px solid $primary-color4;
+  margin-left: 1rem;
+  margin-right: 1rem;
   @include tablet {
     //commentn section in tablet
     margin-left: 2rem;
@@ -71,6 +73,7 @@
       @include mob-body-font($primary-color2);
       @include mobile-padding;
       resize: none;
+      width: 100%;
       @include tablet {
         width: 100%;
 
@@ -111,6 +114,7 @@
   @include mobile-padding;
   padding-top: 0;
   padding-bottom: 0;
+  // padding-right: 0;
   @include tablet {
     width: 15%;
     margin-top: 2rem;

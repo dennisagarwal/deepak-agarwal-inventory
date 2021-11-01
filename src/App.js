@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Comment from "./components/Comment";
 import Video from "./components/Video";
 import "./styles/App.scss";
-import { render } from "sass";
+// import { render } from "sass";
 import videoData from "./assets/data/videoDetails.json";
 import React from "react";
 import views from "../src/assets/icons/views.svg";

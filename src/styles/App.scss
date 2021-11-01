@@ -17,6 +17,11 @@
     }
   }
   &-right{
+    @include tablet {
+      //page-right section in tablet
+      margin-left: 2rem;
+     margin-right: 2rem;
+    }
     @include desktop{
       width: 30%;
     }
@@ -92,7 +97,7 @@
       }
       @include desktop {
         //bmx active video heading for desktop
-        padding-left: 18rem;
+       margin-left: 18rem;
         width: 70%;
       }
     }
@@ -172,7 +177,7 @@
       }
       @include desktop {
         //description section in desktop for active videos
-        padding-left: 18rem;
+        margin-left: 18rem;
         width: 70%;
       }
       &-text {
@@ -188,9 +193,14 @@
     &--comment {
       display: flex;
       flex-direction: column;
+      @include tablet {
+        //commentn section in tablet
+        margin-left: 2rem;
+       margin-right: 2rem;
+      }
       @include desktop {
         //comment user comment section in desktop
-        padding-left: 18rem;
+       margin-left: 18rem;
         width: 70%;
       }
       &-heading {
@@ -237,8 +247,13 @@
         padding-left: 0;
         padding-bottom: 0;
         padding-top: 0;
+        // margin-bottom: 0;
         &-text1{
           font-family: "avenir-bold";
+          margin-bottom: 0;
+        }
+        &-text2{
+          margin-bottom: 0;
         }
       }
       &-active {
@@ -261,7 +276,9 @@
 }
 
 .next-video {
+
   @include desktop {
+    //next video section in desktop
     width: 100%;
     display: flex;
     padding: 0;

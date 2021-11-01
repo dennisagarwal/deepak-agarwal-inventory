@@ -6,6 +6,11 @@
 .comment {
   // width: 100%;
   border-bottom: 1px solid $primary-color4;
+  @include tablet {
+    //commentn section in tablet
+    margin-left: 2rem;
+   margin-right: 2rem;
+  }
   @include desktop {
     width: 70%;
     margin-left: 18rem;
@@ -24,6 +29,7 @@
     flex-direction: row;
     @include tablet {
       height: 6rem;
+      margin-bottom:3rem;
     }
     @include desktop {
       margin-bottom:3rem;

@@ -90,6 +90,7 @@ class App extends React.Component {
             <h2 className="BMX__video--comment-heading-text">3 Comments</h2>
           </div> */}
           {this.state.activeVideo.comments.map((comment) => {
+            const newDate2 = new Date(comment.timestamp);
             return (
               <div className="BMX__video--comment-user" key={comment.id}>
                 <div className="BMX__video--comment-img">
@@ -102,7 +103,7 @@ class App extends React.Component {
                 <div className="BMX__video--comment-name-timestamp-active">
                   <div className="BMX__video--comment-name-timestamp">
                     <p className="BMX__video--comment-name-timestamp-text1">{comment.name}</p>
-                    <p className="BMX__video--comment-name-timestamp-text2">{comment.timestamp}</p>
+                    <p className="BMX__video--comment-name-timestamp-text2"> {newDate2.toLocaleDateString()}</p>
                   </div>
                   <div className="BMX__video--comment-active">
                     <p>{comment.comment}</p>
@@ -118,7 +119,9 @@ class App extends React.Component {
         <h2>Next Videos</h2>
         </div>
         <section className="next-video__section">
-          {this.state.videos.map((video) => {
+        {this.state.videos
+        .filter((video)=> video.id !== this.state.activeVideo.id)
+        .map((video) => {
             return (
               <Video
                 key={video.id}

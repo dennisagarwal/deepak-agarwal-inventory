@@ -4,7 +4,7 @@
 @use "./partials/mixins" as *;
 
 .comment {
-  // width: 100%;
+  width: 100%;
   border-bottom: 1px solid $primary-color4;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -23,6 +23,7 @@
     padding-bottom: 0;
   }
   &__img-textarea-btn {
+    width: 90%;
     display: flex;
     flex-direction: column;
   }

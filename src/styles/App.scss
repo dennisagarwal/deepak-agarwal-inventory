@@ -3,31 +3,32 @@
 @use "./partials/typography" as *;
 @use "./partials/mixins" as *;
 
-.page{
-  @include desktop{
+.page {
+  @include desktop {
     width: 100%;
     display: flex;
     flex-direction: row;
   }
-  &-left{
-    @include desktop{
-      width:70%;
+  &-left {
+    @include desktop {
+      width: 70%;
       border-right: 1px solid $primary-color4;
       margin-right: 1rem;
     }
   }
-  &-right{
+  &-right {
     margin-left: 1rem;
     margin-right: 1rem;
     @include tablet {
       //page-right section in tablet
       margin-left: 2rem;
-     margin-right: 2rem;
+      margin-right: 2rem;
     }
-    @include desktop{
+    @include desktop {
       width: 30%;
     }
-}}
+  }
+}
 
 .BMX {
   &__video {
@@ -37,13 +38,12 @@
       flex-direction: row;
       justify-content: space-between;
       margin-left: 1rem;
-  margin-right: 1rem;
+      margin-right: 1rem;
       @include tablet {
         padding-bottom: 1rem;
-//ctvl display in tablet section
-          margin-left: 2rem;
-          margin-right: 2rem;
-
+        //ctvl display in tablet section
+        margin-left: 2rem;
+        margin-right: 2rem;
       }
       @include desktop {
         //ctvl display in desktop section
@@ -81,7 +81,7 @@
     &--heading {
       border-bottom: 1px solid $primary-color4;
       margin-left: 1rem;
-  margin-right: 1rem;
+      margin-right: 1rem;
       // @include desktop {
       //   border-bottom: none;
       // }
@@ -98,13 +98,13 @@
         }
       }
       @include tablet {
-      margin-left: 2rem;
-      margin-right: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
       }
       @include desktop {
         //bmx active video heading for desktop
         border-bottom: none;
-       margin-left: 18rem;
+        margin-left: 18rem;
         width: 70%;
       }
     }
@@ -117,13 +117,13 @@
         @include mob-body-font($primary-color2);
         font-family: "avenir-regular";
         line-height: 1.5;
-        @include desktop{
+        @include desktop {
           @include mob-body-font($primary-color2);
           font-family: "avenir-bold";
         }
       }
 
-      &-text2{
+      &-text2 {
         @include mobile-padding;
         padding-top: 0;
         padding-bottom: 0;
@@ -140,7 +140,6 @@
         display: flex;
         flex-direction: row;
       }
-
     }
     &--view-like {
       display: flex;
@@ -180,7 +179,7 @@
       @include tablet {
         //description section in desktop for active videos
         margin-left: 2rem;
-       margin-right: 2rem;
+        margin-right: 2rem;
       }
       @include desktop {
         //description section in desktop for active videos
@@ -205,11 +204,11 @@
       @include tablet {
         //commentn section in tablet
         margin-left: 2rem;
-       margin-right: 2rem;
+        margin-right: 2rem;
       }
       @include desktop {
         //comment user comment section in desktop
-       margin-left: 18rem;
+        margin-left: 18rem;
         width: 70%;
       }
       &-heading {
@@ -257,11 +256,11 @@
         padding-bottom: 0;
         padding-top: 0;
         // margin-bottom: 0;
-        &-text1{
+        &-text1 {
           font-family: "avenir-bold";
           margin-bottom: 0;
         }
-        &-text2{
+        &-text2 {
           margin-bottom: 0;
         }
       }
@@ -285,7 +284,6 @@
 }
 
 .next-video {
-
   @include desktop {
     //next video section in desktop
     width: 100%;
@@ -300,7 +298,7 @@
       @include mob-body-font($primary-color6);
       font-size: 0.5rem;
       padding: 0;
-      display:flex;
+      display: flex;
       width: 100%;
     }
 
@@ -312,7 +310,7 @@
     @include desktop {
       padding: 0;
       display: inline-block;
-      width:100%;
+      width: 100%;
     }
   }
 }

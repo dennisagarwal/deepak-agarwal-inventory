@@ -1,6 +1,8 @@
-import { Link, Switch, Route } from "react-router-dom";
+
 import publish from "../assets/icons/publish.svg";
-import "../styles/Upload.scss"
+import "../styles/UploadPage.scss"
+import Btn from "../components/Btn";
+import Header from "../components/Header";
 
 function UploadPage(props) {
   return (
@@ -11,7 +13,7 @@ function UploadPage(props) {
         <p className="upload__heading-img">VIDEO THUMBNAIL</p>
         <img className="upload__img" src="" alt="video-thumbnail-image" />
       </div>
-      <Form className="upload__form">
+      <form className="upload__form">
         <label className="upload__form-label" type="text">
           TITLE YOUR VIDEO
         </label>
@@ -24,7 +26,7 @@ function UploadPage(props) {
           <img src={publish} alt="video-thumbnail-image" />
           <Btn />
         </button>
-      </Form>
+      </form>
     </section>
   );
 }

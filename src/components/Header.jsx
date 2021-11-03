@@ -5,7 +5,7 @@ import "../styles/Header.scss";
 import Btn from "./Btn";
 import upload from ".././assets/icons/upload.svg";
 import search from ".././assets/icons/search.svg";
-import { Link, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 //sprint2
 //header including logo input button image
 export default function Header() {
@@ -31,15 +31,17 @@ export default function Header() {
             />
           </div>
           {/* upload button for tablet and desktop */}
-          <div className="Btn__upload2">
+          {/* <Link to="/UploadPage"> */}
+          <Link to="/uploads" className="Btn__upload2">
             <img
               className="Btn__upload2--img"
               src={upload}
               alt="upload-image"
             />
             {/* sprint2 */}
-           <Link to="/UploadPage"> <Btn text="UPLOAD" /></Link>
-          </div>
+           <Btn text="UPLOAD" />
+          </Link>
+          {/* </Link> */}
           <img
             className="main-header__form-img"
             src={mohanImage}

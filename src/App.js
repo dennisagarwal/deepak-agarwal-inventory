@@ -7,6 +7,8 @@ import React from "react";
 import views from "../src/assets/icons/views.svg";
 import likes from "../src/assets/icons/likes.svg";
 import mohanImage from "../src/assets/images/Mohan-muruge.jpg";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import UploadPage from "./pages/UploadPage";
 
 
 class App extends React.Component {
@@ -143,6 +145,14 @@ class App extends React.Component {
         </section>
       </section>
     );
+
+//     <BrowserRouter>
+// <Header />
+//       {/* sprint2 */}
+//       <Switch>
+//         <Route path="/UploadPage" exact component={UploadPage} />
+//       </Switch>
+//     </BrowserRouter>
   }
 }
 

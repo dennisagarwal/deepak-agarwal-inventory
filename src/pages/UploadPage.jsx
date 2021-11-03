@@ -4,7 +4,7 @@ import "../styles/UploadPage.scss"
 import Btn from "../components/Btn";
 import Header from "../components/Header";
 
-function UploadPage(props) {
+function UploadPage() {
   return (
     <section className="upload">
       <Header />

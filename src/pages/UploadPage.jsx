@@ -25,12 +25,15 @@ function UploadPage() {
           ADD A VIDEO DESCRIPTION
         </label>
         <textarea className="upload__form-textarea" type="text" placeholder="Add a description to your video"/>
+
         <div className="upload__form-buttons-div">
+        <a className="upload__form-anchor2" href={App}>CANCEL</a>
+
         <button className="upload__form-button">
           <img className="upload__form-button-img" src={publish} alt="video-thumbnail-image" />
           <Btn text="PUBLISH" />
         </button>
-        <a className="upload__form-anchor" href={App}>CANCEL</a>
+        <a className="upload__form-anchor1" href={App}>CANCEL</a>
       </div>
       </form>
     </section>

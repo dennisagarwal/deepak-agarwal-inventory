@@ -1,4 +1,4 @@
-
+import App from "../App";
 import publish from "../assets/icons/publish.svg";
 import thumbnail from "../assets/icons/uploadVideoPreview.jpg";
 import "../styles/UploadPage.scss"
@@ -25,10 +25,13 @@ function UploadPage() {
           ADD A VIDEO DESCRIPTION
         </label>
         <textarea className="upload__form-textarea" type="text" placeholder="Add a description to your video"/>
+        <div className="upload__form-buttons-div">
         <button className="upload__form-button">
-          <img src={publish} alt="video-thumbnail-image" />
-          <Btn />
+          <img className="upload__form-button-img" src={publish} alt="video-thumbnail-image" />
+          <Btn text="PUBLISH" />
         </button>
+        <a className="upload__form-anchor" href={App}>CANCEL</a>
+      </div>
       </form>
     </section>
   );

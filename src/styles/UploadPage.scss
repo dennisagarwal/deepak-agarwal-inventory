@@ -11,15 +11,24 @@
 &__header{
   border-bottom: 1px solid $primary-color6;
   padding-bottom: 2rem;
+  @include tablet{
+    @include tablet-padding;
+    padding:0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 &__heading{
   @include mob-page-header-font($primary-color2);
   font-size: 2rem;
   font-family: "avenir-bold";
   padding-bottom: 2rem;
+  padding-top: 2rem;
+  border-bottom: 1px solid $primary-color6;
   &-img{
     @include mob-body-font($primary-color6);
     font-family: "avenir-bold";
+    margin-top: 4rem;
   }
 }
 &__img{
@@ -38,18 +47,58 @@
   &-input{
     height: 2rem;
     border-radius: 0.5rem;
-    background-color: $primary-color6;
+    background-color: $primary-color4;
     @include mob-body-font($primary-color2);
     @include mobile-padding;
     margin-bottom: 2rem;
+    border: 1px solid $primary-color6;
   }
   &-textarea{
     height: 8rem;
     resize: none;
     border-radius: 0.5rem;
-    background-color: $primary-color6;
+    background-color: $primary-color4;
     @include mobile-padding;
     margin-bottom: 2rem;
+    border: 1px solid $primary-color6;
+    @include tablet{
+      // border-bottom: 1px solid $primary-color6;
+      // padding-bottom: 2rem;
+    }
+  }
+  &-buttons-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include tablet{
+      border-top: 1px solid $primary-color6;
+      padding-top: 2rem;
+    }
+  }
+  &-button{
+    display: flex;
+    flex-direction: row;
+    background-color: $primary-color1;
+    @include mobile-padding;
+    border-radius: 0.5rem;
+    border-style: none;
+    font-size: 1.5rem;
+    font-family: "avenir-bold";
+    // border-top: 1px solid $primary-color6;
+    // padding-top: 2rem;
+    // align-items: center;
+    &-img{
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  &-anchor{
+    font-size: 1.5rem;
+    font-family: "avenir-bold";
+    color:$primary-color1;
+    @include mobile-padding;
+    // justify-content: center;
+    margin: 1rem auto;
   }
 }
 }

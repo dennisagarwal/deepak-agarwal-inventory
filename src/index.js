@@ -13,19 +13,16 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 // const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
-
-
     <BrowserRouter>
-    {/* <Header /> */}
+      {/* <Header /> */}
 
       {/* sprint2 */}
       <Switch>
-      <Route path="/" exact component={App} />
-      <Route path="/videos/:id" exact component={App} />
+        <Route path="/" exact component={App} />
+        <Route path="/videos/:id" exact component={App} />
         <Route path="/uploads" exact component={UploadPage} />
-       </Switch>
+      </Switch>
     </BrowserRouter>
-
   </React.StrictMode>,
 
   document.getElementById("root")

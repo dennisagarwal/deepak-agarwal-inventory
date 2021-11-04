@@ -1,5 +1,7 @@
 import "../styles/Video.scss";
 
+
+
 function Video(props) {
   console.log("video props", props);
   return (

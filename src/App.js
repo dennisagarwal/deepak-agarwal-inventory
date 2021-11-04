@@ -10,23 +10,72 @@ import mohanImage from "../src/assets/images/Mohan-muruge.jpg";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import UploadPage from "./pages/UploadPage";
 
+// import React from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 class App extends React.Component {
   state = {
-    videos: videoData,
-    activeVideo: videoData[0],
+    // videos: videoData,
+    // activeVideo: videoData[0],
+    videos: [],
+    activeVideo: {},
   };
 
-  handleVideoChange = (id) => {
-    console.log("handleVideoChange", id);
-    const foundVideo = this.state.videos.find((video) => {
-      return video.id === id;
-    });
-    this.setState({
-      //refers to clicked video in the next video
-      activeVideo: foundVideo,
-    });
-  };
+  componentDidMount() {
+    console.log(this.props);
+    this.getVideos();
+  }
+
+  // get a collection of album
+  getVideos() {
+    axios
+      .get("https://project-2-api.herokuapp.com/videos")
+      .then((response) => {
+        this.setState({
+          videos: response.data,
+          activeVideo: response.data[0],
+        });
+      })
+      .catch((error) => console.log(error));
+  }
+
+  // get a single video by its ID
+  getVideosById() {
+    axios
+      .get("https://project-2-api.herokuapp.com/videos/${id}")
+      .then((response) => {
+        this.setState({
+          activeVideo: response.data,
+        });
+      })
+      .catch((error) => console.log(error));
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { id } = this.props.match.params;
+    if (id) {
+      if (prevState.activeAlbum.id !== id) {
+        this.getAVideoById(id);
+        // const foundAlbum = this.state.albums.find((album) => album.id === id);
+        // console.log(foundAlbum);
+        // this.setState({
+        //   activeAlbum: foundAlbum
+        // });
+      }
+    }
+  }
+
+  // handleVideoChange = (id) => {
+  //   console.log("handleVideoChange", id);
+  //   const foundVideo = this.state.videos.find((video) => {
+  //     return video.id === id;
+  //   });
+  //   this.setState({
+  //     //refers to clicked video in the next video
+  //     activeVideo: foundVideo,
+  //   });
+  // };
 
   render() {
     const newDate1 = new Date(this.state.activeVideo.timestamp);
@@ -146,13 +195,13 @@ class App extends React.Component {
       </section>
     );
 
-//     <BrowserRouter>
-// <Header />
-//       {/* sprint2 */}
-//       <Switch>
-//         <Route path="/UploadPage" exact component={UploadPage} />
-//       </Switch>
-//     </BrowserRouter>
+    //     <BrowserRouter>
+    // <Header />
+    //       {/* sprint2 */}
+    //       <Switch>
+    //         <Route path="/UploadPage" exact component={UploadPage} />
+    //       </Switch>
+    //     </BrowserRouter>
   }
 }
 

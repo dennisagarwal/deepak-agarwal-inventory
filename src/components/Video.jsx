@@ -1,15 +1,16 @@
 import "../styles/Video.scss";
+import { Link } from "react-router-dom";
 
 
 
 function Video(props) {
-  console.log("video props", props);
+
   return (
 
-    <article className="BMX__next-article"
-      onClick={() => {
-        props.handleVideoChange(props.id);
-      }}
+    <Link to={"/videos/" + props.id } className="BMX__next-article"
+      // onClick={() => {
+      //   props.handleVideoChange(props.id);
+      // }}
     >
 <div className="BMX__next-section" >
 <div className="BMX__next-section-div">
@@ -20,10 +21,10 @@ function Video(props) {
       <p className="BMX__next-section-div--details-text">{props.channel}</p>
       </div>
       </div>
-      <p>{props.views}</p>
+      {/* <p>{props.views}</p>
       <p>{props.likes}</p>
-      <p>{props.timestamp}</p>
-    </article>
+      <p>{props.timestamp}</p> */}
+    </Link>
   );
 }
 

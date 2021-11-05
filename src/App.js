@@ -2,13 +2,14 @@ import Header from "./components/Header";
 import Comment from "./components/Comment";
 import Video from "./components/Video";
 import "./styles/App.scss";
-import videoData from "./assets/data/videoDetails.json";
+// import videoData from "./assets/data/videoDetails.json";
 import React from "react";
 import views from "../src/assets/icons/views.svg";
 import likes from "../src/assets/icons/likes.svg";
 import mohanImage from "../src/assets/images/Mohan-muruge.jpg";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import UploadPage from "./pages/UploadPage";
+// import { BrowserRouter, Switch, Route } from "react-router-dom";
+// import UploadPage from "./pages/UploadPage";
+// api_key	"db19a50e-b6fd-4717-9083-77b0d60253b5"
 
 // import React from "react";
 import axios from "axios";
@@ -19,20 +20,22 @@ class App extends React.Component {
     // videos: videoData,
     // activeVideo: videoData[0],
     videos: [],
-    activeVideo: {},
+    activeVideo: {}
   };
 
   componentDidMount() {
-    console.log(this.props);
+
     this.getVideos();
   }
 
   // get a collection of album
   getVideos() {
     axios
-      .get("https://project-2-api.herokuapp.com/videos")
+      .get("https://project-2-api.herokuapp.com/videos?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5")
       .then((response) => {
+        console.log(response.data)
         this.setState({
+
           videos: response.data,
           activeVideo: response.data[0],
         });
@@ -41,12 +44,13 @@ class App extends React.Component {
   }
 
   // get a single video by its ID
-  getVideosById() {
+  getVideosById(id) {
     axios
-      .get("https://project-2-api.herokuapp.com/videos/${id}")
+      .get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5`)
       .then((response) => {
+        console.log("line 48" + response.data);
         this.setState({
-          activeVideo: response.data,
+          activeVideo: response.data
         });
       })
       .catch((error) => console.log(error));
@@ -55,13 +59,13 @@ class App extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     const { id } = this.props.match.params;
     if (id) {
-      if (prevState.activeAlbum.id !== id) {
-        this.getAVideoById(id);
-        // const foundAlbum = this.state.albums.find((album) => album.id === id);
-        // console.log(foundAlbum);
-        // this.setState({
-        //   activeAlbum: foundAlbum
-        // });
+      if (prevState.activeVideo.id !== id) {
+        this.getVideoById(id);
+        const foundVideo = this.state.videos.find((video) => video.id === id);
+        console.log(foundVideo);
+        this.setState({
+          activeVideo: foundVideo,
+        });
       }
     }
   }
@@ -80,10 +84,12 @@ class App extends React.Component {
   render() {
     const newDate1 = new Date(this.state.activeVideo.timestamp);
     const { activeVideo } = this.state;
-    console.log(activeVideo);
+
     return (
       <section>
         <Header />
+        {this.state.activeVideo && (
+          <>
         <div className="BMX__video--image">
           <video
             className="BMX__video--image-element"
@@ -136,11 +142,13 @@ class App extends React.Component {
               </p>
             </div>
             <Comment />
+
             <div className="BMX__video--comment">
               {/* <div className="BMX__video--comment-heading">
             <h2 className="BMX__video--comment-heading-text">3 Comments</h2>
           </div> */}
-              {this.state.activeVideo.comments.map((comment) => {
+
+              {this.state.activeVideo.comments && this.state.activeVideo.comments.map((comment) => {
                 const newDate2 = new Date(comment.timestamp);
                 return (
                   <div className="BMX__video--comment-user" key={comment.id}>
@@ -157,7 +165,7 @@ class App extends React.Component {
                           {comment.name}
                         </p>
                         <p className="BMX__video--comment-name-timestamp-text2">
-                          {" "}
+
                           {newDate2.toLocaleDateString()}
                         </p>
                       </div>
@@ -168,40 +176,50 @@ class App extends React.Component {
                   </div>
                 );
               })}
+
             </div>
+
           </div>
+
           <div className="page-right">
             <div className="next-video__heading">
               <h2>Next Videos</h2>
             </div>
+
             <section className="next-video__section">
-              {this.state.videos
-                .filter((video) => video.id !== this.state.activeVideo.id)
-                .map((video) => {
-                  return (
-                    <Video
+              {this.state.videos &&
+                /* .filter((video) => video.id !== this.state.activeVideo.id) */
+                this.state.videos
+                  .filter((video) => video.id !== this.state.activeVideo.id)
+                  .map((video) => {
+                    return (
+                      <>
+                   <Video
                       key={video.id}
                       id={video.id}
                       title={video.title}
                       image={video.image}
                       channel={video.channel}
-                      handleVideoChange={this.handleVideoChange}
+
                     />
-                  );
-                })}
+
+                    {/* <li key={video.id}>
+                      <Link to={"/videos/" + video.id}>
+                        <h3>{video.title}</h3>
+                        <img src={video.image} alt={video.title} />
+                      </Link>
+                    </li> */}
+                    </>
+                    )
+                  })}
             </section>
+
           </div>
         </section>
+        </> )
+        }
       </section>
-    );
-
-    //     <BrowserRouter>
-    // <Header />
-    //       {/* sprint2 */}
-    //       <Switch>
-    //         <Route path="/UploadPage" exact component={UploadPage} />
-    //       </Switch>
-    //     </BrowserRouter>
+    )
   }
 }
 

@@ -2,9 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+// import Video from "./components/Video";
 import UploadPage from "./pages/UploadPage";
 // sprint2
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import Home from './pages/Home';
 // import reportWebVitals from './reportWebVitals';
@@ -19,6 +20,7 @@ ReactDOM.render(
       {/* sprint2 */}
       <Switch>
         <Route path="/" exact component={App} />
+        <Route path="/videos" exact component={App} />
         <Route path="/videos/:id" exact component={App} />
         <Route path="/uploads" exact component={UploadPage} />
       </Switch>

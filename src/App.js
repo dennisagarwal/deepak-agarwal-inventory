@@ -2,7 +2,6 @@ import Header from "./components/Header";
 import Comment from "./components/Comment";
 import Video from "./components/Video";
 import "./styles/App.scss";
-// import videoData from "./assets/data/videoDetails.json";
 import React from "react";
 import views from "../src/assets/icons/views.svg";
 import likes from "../src/assets/icons/likes.svg";
@@ -17,25 +16,21 @@ import { Link } from "react-router-dom";
 
 class App extends React.Component {
   state = {
-    // videos: videoData,
-    // activeVideo: videoData[0],
-    videos: [],
+       videos: [],
     activeVideo: {}
   };
 
   componentDidMount() {
-
     this.getVideos();
   }
 
-  // get a collection of album
+  // get a collection of video
   getVideos() {
     axios
       .get("https://project-2-api.herokuapp.com/videos?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5")
       .then((response) => {
         console.log(response.data)
         this.setState({
-
           videos: response.data,
           activeVideo: response.data[0],
         });
@@ -44,7 +39,7 @@ class App extends React.Component {
   }
 
   // get a single video by its ID
-  getVideosById(id) {
+  getVideoById(id) {
     axios
       .get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5`)
       .then((response) => {
@@ -61,25 +56,14 @@ class App extends React.Component {
     if (id) {
       if (prevState.activeVideo.id !== id) {
         this.getVideoById(id);
-        const foundVideo = this.state.videos.find((video) => video.id === id);
-        console.log(foundVideo);
-        this.setState({
-          activeVideo: foundVideo,
-        });
+        // const foundVideo = this.state.videos.find((video) => video.id === id);
+        // console.log(foundVideo);
+        // this.setState({
+        //   activeVideo: foundVideo,
+        // });
       }
     }
   }
-
-  // handleVideoChange = (id) => {
-  //   console.log("handleVideoChange", id);
-  //   const foundVideo = this.state.videos.find((video) => {
-  //     return video.id === id;
-  //   });
-  //   this.setState({
-  //     //refers to clicked video in the next video
-  //     activeVideo: foundVideo,
-  //   });
-  // };
 
   render() {
     const newDate1 = new Date(this.state.activeVideo.timestamp);
@@ -192,7 +176,7 @@ class App extends React.Component {
                 this.state.videos
                   .filter((video) => video.id !== this.state.activeVideo.id)
                   .map((video) => {
-                    return (
+                  return (
                       <>
                    <Video
                       key={video.id}

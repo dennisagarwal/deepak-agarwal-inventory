@@ -89,12 +89,16 @@
         // margin-top: 0;
         @include mob-page-header-font($primary-color2);
         line-height: 1.5;
+        @include tablet{
+          margin-bottom: 0;
+        }
         @include desktop {
           @include tab-section-header-font($primary-color2);
           margin-top: 3rem;
         }
       }
       @include tablet {
+        border-bottom: none;
         margin-left: 2rem;
         margin-right: 2rem;
       }
@@ -114,6 +118,10 @@
         @include mob-body-font($primary-color2);
         font-family: "avenir-regular";
         line-height: 1.5;
+        @include tablet {
+         padding-bottom: 0;
+         margin-bottom: 0;
+        }
         @include desktop {
           @include mob-body-font($primary-color2);
           font-family: "avenir-bold";
@@ -125,9 +133,15 @@
         @include mob-body-font($primary-color2);
         font-family: "avenir-regular";
         line-height: 1.5;
+        @include tablet {
+          padding-top: 1rem;
+          padding-bottom: 0;
+         margin-bottom: 0;
 
+        }
       }
       @include tablet {
+        // padding-top: 1rem;
         display: flex;
         flex-direction: row;
       }

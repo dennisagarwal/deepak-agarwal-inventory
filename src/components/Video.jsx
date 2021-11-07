@@ -7,7 +7,11 @@ function Video(props) {
 
   return (
 
-    <Link to={"/videos/" + props.id } className="BMX__next-article">
+    <Link to={"/videos/" + props.id } className="BMX__next-article"
+      // onClick={() => {
+      //   props.handleVideoChange(props.id);
+      // }}
+    >
 <div className="BMX__next-section" >
 <div className="BMX__next-section-div">
       <img className="BMX__next-section-div--img" src={props.image} alt={props.name} />
@@ -25,3 +29,5 @@ function Video(props) {
 }
 
 export default Video;
+
+

@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header className="main-header">
-      <h1 className="main-header__logo">
+      <Link to="/" className="main-header__logo">
         <img src={logo} alt="app logo" />
-      </h1>
+      </Link>
       <form className="main-header__form">
         <div className="main-header__form-input-img">
           <div className="main-header__form-input-search-img">

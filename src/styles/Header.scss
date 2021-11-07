@@ -22,7 +22,7 @@
       @include tablet-padding;
       // margin-left: 1rem;
       @include desktop {
-        margin-left: 18rem;
+        margin-left: 12rem;
       }
     }
   }
@@ -43,7 +43,7 @@
       justify-content: flex-end;
     }
     @include desktop {
-      margin-right: 18rem;
+      margin-right: 12rem;
     }
     &-img {
       width: 3.5rem;
@@ -94,7 +94,8 @@
   margin: 1rem 0;
 width:85%;
 justify-content: center;
-// align-items: center;
+font-family: "avenir-bold";
+text-decoration: none;
   background-color: $primary-color1;
   height: 3rem;
   display: flex;
@@ -115,7 +116,8 @@ justify-content: center;
 
 .Btn__upload2 {
   display: none;
-
+  text-decoration: none;
+  font-family: "avenir-bold";
   @include tablet {
     display: flex;
     border-radius: 0.5rem;

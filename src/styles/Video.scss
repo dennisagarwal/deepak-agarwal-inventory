@@ -5,6 +5,7 @@
 
 .BMX {
   &__next-article {
+    text-decoration: none;
     display: flex;
     flex-direction: row;
     @include tablet {

@@ -29,6 +29,10 @@
   &__form {
     width: 100%;
     @include mobile-padding;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

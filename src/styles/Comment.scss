@@ -4,7 +4,7 @@
 @use "./partials/mixins" as *;
 
 .comment {
-  width: 100%;
+  // width: 100%;
   border-bottom: 1px solid $primary-color4;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -85,7 +85,8 @@
     }
   }
   &__img {
-    width: 15%;
+    width:5rem;
+    // width: 15%;
     height: 10rem;
     &--mohan {
       width: 3.5rem;
@@ -93,10 +94,11 @@
       border-radius: 50%;
       @include mobile-padding;
       padding-top: 0;
+      padding-bottom: 0;
     }
     @include tablet {
       height: 4rem;
-      width: 10%;
+      width: 15%;
       padding-right: 0;
       margin-top: 2rem;
     }
@@ -127,14 +129,3 @@
   }
 }
 
-// .next-video {
-//   &__heading {
-//     @include tablet-padding;
-//     padding-bottom: 0;
-//     padding-left: 1rem;
-
-//     &--text {
-//       margin: 0;
-//     }
-//   }
-// }

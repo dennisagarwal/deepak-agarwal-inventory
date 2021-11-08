@@ -37,7 +37,7 @@
       margin-bottom:3rem;
     }
     @include desktop {
-      margin-bottom:3rem;
+      margin-bottom:1rem;
     }
   }
   &__textarea-subtext {
@@ -110,19 +110,23 @@
   background-color: $primary-color1;
   height: 3rem;
   display: flex;
-
+font-family: "avenir-bold";
   @include mobile-padding;
   padding-top: 0;
   padding-bottom: 0;
-  @include tablet {
-    width: 30%;
-    margin-top: 2.5rem;
-    margin-left: 3rem
-  }
   &--img {
     border-radius: 0.5rem;
     padding: 0;
     background-color: $primary-color1;
   }
+  @include tablet {
+    width: 30%;
+    margin-top: 2.5rem;
+    margin-left: 3rem
+  }
+  @include desktop {
+    width: 20%;
+  }
+
 }
 

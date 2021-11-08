@@ -3,132 +3,126 @@
 @use "./partials/typography" as *;
 @use "./partials/mixins" as *;
 
-.upload{
+.upload {
   display: flex;
   flex-direction: column;
   @include mobile-padding;
-// align-items:flex-start;
-&__header{
-  border-bottom: 1px solid $primary-color6;
-  padding-bottom: 2rem;
-  @include tablet{
-    @include tablet-padding;
-    padding:0;
-    margin-top: 0;
-    margin-bottom: 0;
+  @include tablet {
+    padding: 0;
   }
-}
-&__heading{
-  @include mob-page-header-font($primary-color2);
-  font-size: 2rem;
-  font-family: "avenir-bold";
-  padding-bottom: 2rem;
-  padding-top: 2rem;
-  border-bottom: 1px solid $primary-color6;
-  &-img{
-    @include mob-body-font($primary-color6);
-    font-family: "avenir-bold";
-    margin-top: 4rem;
-  }
-}
-&__img{
-  width: 100%;
-  border-radius: 0.5rem;
-  margin-bottom: 2rem;
-}
-&__form{
-  display: flex;
-  flex-direction: column;
-  &-label{
-    @include mob-body-font($primary-color6);
-    font-family: "avenir-bold";
-    padding-bottom: 1rem;
-  }
-  &-input{
-    height: 2rem;
-    border-radius: 0.5rem;
-    background-color: $primary-color4;
-    @include mob-body-font($primary-color2);
-    @include mobile-padding;
-    margin-bottom: 2rem;
-    border: 1px solid $primary-color6;
-  }
-  &-textarea{
-    height: 8rem;
-    resize: none;
-    border-radius: 0.5rem;
-    background-color: $primary-color4;
-    @include mobile-padding;
-    margin-bottom: 2rem;
-    border: 1px solid $primary-color6;
-    @include tablet{
-      // border-bottom: 1px solid $primary-color6;
-      // padding-bottom: 2rem;
+  &__header {
+    border-bottom: 1px solid $primary-color6;
+    padding-bottom: 2rem;
+    // @include mobile-padding;
+    @include tablet {
+      @include tablet-padding;
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
-  &-buttons-div{
+  &__heading {
+    @include mob-page-header-font($primary-color2);
+    font-size: 2rem;
+    font-family: "avenir-bold";
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    border-bottom: 1px solid $primary-color6;
+    &-img {
+      @include mob-body-font($primary-color6);
+      font-family: "avenir-bold";
+      margin-top: 4rem;
+    }
+  }
+  &__img {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    @include tablet{
+      height: 20rem;
+      width: 50%;
+    }
+  }
+  &__form {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    @include tablet{
-
-      width:100%;
-      border-top: 1px solid $primary-color6;
-    //  @include tablet-padding;
-     flex-direction: row;
-align-items: center;
-justify-content: flex-end;
-
-// justify-content: flex-end;
-
+    &-label {
+      @include mob-body-font($primary-color6);
+      font-family: "avenir-bold";
+      padding-bottom: 1rem;
     }
-  }
-  &-button{
-    display: flex;
-    flex-direction: row;
-    background-color: $primary-color1;
-    @include mobile-padding;
-    border-radius: 0.5rem;
-    border-style: none;
-    font-size: 1.5rem;
-    font-family: "avenir-bold";
-    // border-top: 1px solid $primary-color6;
-    // padding-top: 2rem;
-    // align-items: center;
-    @include tablet{
-      display: flex;
-      width: 30%;
-      height: 4rem;
-
-
-
-    }
-    &-img{
-      width: 2rem;
+    &-input {
       height: 2rem;
+      border-radius: 0.5rem;
+      background-color: $primary-color4;
+      @include mob-body-font($primary-color2);
+      @include mobile-padding;
+      margin-bottom: 2rem;
+      border: 1px solid $primary-color6;
     }
-  }
-  &-anchor1{
-    font-size: 1.5rem;
-    font-family: "avenir-bold";
-    color:$primary-color1;
-    @include mobile-padding;
-    // justify-content: center;
-    margin: 1rem auto;
-    @include tablet{
+    &-textarea {
+      height: 8rem;
+      resize: none;
+      border-radius: 0.5rem;
+      background-color: $primary-color4;
+      @include mobile-padding;
+      margin-bottom: 2rem;
+      border: 1px solid $primary-color6;
+      @include tablet {
+      }
+    }
+    &-buttons-div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      @include tablet {
+        width: 100%;
+        border-top: 1px solid $primary-color6;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+    &-button {
+      display: flex;
+      flex-direction: row;
+      background-color: $primary-color1;
+      @include mobile-padding;
+      border-radius: 0.5rem;
+      border-style: none;
+      font-size: 1.5rem;
+      font-family: "avenir-bold";
+      @include tablet {
+        display: flex;
+        width: 20%;
+        height: 4rem;
+      }
+      &-img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    &-anchor1 {
+      font-size: 1.5rem;
+      font-family: "avenir-bold";
+      color: $primary-color1;
+      @include mobile-padding;
+      margin: 1rem auto;
+      @include tablet {
+        display: none;
+      }
+    }
+    &-anchor2 {
       display: none;
+      @include tablet {
+        font-size: 1.5rem;
+        font-family: "avenir-bold";
+        color: $primary-color1;
+        @include mobile-padding;
+        margin: 1rem;
+        margin-right: 6rem;
+        display: flex;
+      }
     }
-  }
-  &-anchor2{
-    display: none;
-    @include tablet{
-    font-size: 1.5rem;
-    font-family: "avenir-bold";
-    color:$primary-color1;
-    @include mobile-padding;
-    // justify-content: center;
-    margin: 1rem;
-    display: flex;
   }
 }
-}}

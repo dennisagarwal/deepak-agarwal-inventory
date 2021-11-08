@@ -6,8 +6,6 @@ import React from "react";
 import views from "../src/assets/icons/views.svg";
 import likes from "../src/assets/icons/likes.svg";
 import mohanImage from "../src/assets/images/Mohan-muruge.jpg";
-
-// import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -22,15 +20,13 @@ class App extends React.Component {
     this.getVideoById("84e96018-4022-434e-80bf-000ce4cd12b8");
   }
 
-  // get a collection of album
+  // get a collection of videos
   getVideos() {
     axios
       .get(
         "https://project-2-api.herokuapp.com/videos?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5"
       )
       .then((response) => {
-        console.log(response.data);
-        console.log(response.data[0]);
         this.setState({
           videos: response.data,
           activeVideo: response.data[0],
@@ -47,7 +43,6 @@ class App extends React.Component {
         `https://project-2-api.herokuapp.com/videos/${id}?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5`
       )
       .then((response) => {
-        console.log(response.data);
         this.setState({
           activeVideo: response.data,
         });

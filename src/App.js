@@ -1,6 +1,6 @@
-import Header from "./components/Header";
-import Comment from "./components/Comment";
-import Video from "./components/Video";
+import Header from "./components/Header/Header";
+import Comment from "./components/Comment/Comment";
+import Video from "./components/Video/Video";
 import "./styles/App.scss";
 import React from "react";
 import views from "../src/assets/icons/views.svg";

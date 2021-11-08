@@ -1,7 +1,7 @@
-@use "./partials/normalize" as *;
-@use "./partials/variables" as *;
-@use "./partials/typography" as *;
-@use "./partials/mixins" as *;
+@use "../../styles/partials/normalize" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
 
 .comment {
   border-bottom: 1px solid $primary-color4;

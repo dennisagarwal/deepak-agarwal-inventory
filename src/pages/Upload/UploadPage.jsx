@@ -1,9 +1,9 @@
-import App from "../App";
-import publish from "../assets/icons/publish.svg";
-import thumbnail from "../assets/icons/uploadVideoPreview.jpg";
-import "../styles/UploadPage.scss"
-import Btn from "../components/Btn";
-import Header from "../components/Header";
+import App from "../../App";
+import publish from "../../assets/icons/publish.svg";
+import thumbnail from "../../assets/icons/uploadVideoPreview.jpg";
+import "./UploadPage.scss"
+import Btn from "../../components/Button/Btn";
+import Header from "../../components/Header/Header";
 import { Link } from "react-router-dom";
 
 function UploadPage() {

@@ -1,10 +1,10 @@
 // importing an image
-import logo from "../assets/logo/BrainFlix-logo.svg";
-import mohanImage from "../assets/images/Mohan-muruge.jpg";
-import "../styles/Header.scss";
-import Btn from "./Btn";
-import upload from ".././assets/icons/upload.svg";
-import search from ".././assets/icons/search.svg";
+import logo from "../../assets/logo/BrainFlix-logo.svg";
+import mohanImage from "../../assets/images/Mohan-muruge.jpg";
+import "./Header.scss";
+import Btn from "../Button/Btn";
+import upload from "../../assets/icons/upload.svg";
+import search from "../../assets/icons/search.svg";
 import { Link } from "react-router-dom";
 //sprint2
 //header including logo, input, button ,image

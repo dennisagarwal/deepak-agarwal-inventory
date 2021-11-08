@@ -1,7 +1,7 @@
-import "../styles/Comment.scss";
-import mohanImage from "../assets/images/Mohan-muruge.jpg";
-import Btn from "./Btn";
-import addComment from ".././assets/icons/add_comment.svg";
+import "./Comment.scss";
+import mohanImage from "../../assets/images/Mohan-muruge.jpg";
+import Btn from "../Button/Btn";
+import addComment from "../../assets/icons/add_comment.svg";
 
 export default function Comment() {
   return (

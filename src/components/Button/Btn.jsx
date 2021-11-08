@@ -1,4 +1,4 @@
-import '../styles/Btn.scss';
+import './Btn.scss';
 
 
 function Btn(props) {

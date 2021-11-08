@@ -1,4 +1,4 @@
-import "../styles/Video.scss";
+import "./Video.scss";
 import { Link } from "react-router-dom";
 
 function Video(props) {

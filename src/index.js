@@ -2,22 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-// import Video from "./components/Video";
-import UploadPage from "./pages/UploadPage";
-// sprint2
-// import Header from "./components/Header";
+import UploadPage from "./pages/Upload/UploadPage";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import Home from './pages/Home';
-// import reportWebVitals from './reportWebVitals';
 
 //sprint2
-// const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <Header /> */}
-
-      {/* sprint2 */}
       <Switch>
         <Route path="/" exact component={App} />
         <Route path="/videos" exact component={App} />

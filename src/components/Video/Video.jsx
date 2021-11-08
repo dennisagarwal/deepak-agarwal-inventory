@@ -16,7 +16,6 @@ function Video(props) {
         </div>
         <div className="BMX__next-section-div--details">
           <h2 className="BMX__next-section-div--details-heading">
-            {/* {props.title} */}
             {shortText}
           </h2>
 

@@ -85,7 +85,6 @@
         @include mobile-padding;
         padding-top: 0;
         padding-bottom: 0;
-        // margin-top: 0;
         @include mob-page-header-font($primary-color2);
         line-height: 1.5;
         @include tablet{
@@ -93,7 +92,6 @@
         }
         @include desktop {
           @include tab-section-header-font($primary-color2);
-          // margin-top: 3rem;
           margin-top: 0;
         }
       }
@@ -113,8 +111,6 @@
       &-text1 {
         @include mobile-padding;
         padding-top:1rem;
-        // padding-bottom: 0;
-        // margin-bottom: 0;
         @include mob-body-font($primary-color2);
         font-family: "avenir-regular";
         line-height: 1.5;
@@ -122,8 +118,7 @@
          padding-bottom: 0;
          margin-bottom: 0;
         }
-        @include desktop {
-          @include mob-body-font($primary-color2);
+         @include tablet {
           font-family: "avenir-bold";
         }
       }
@@ -286,10 +281,6 @@
         @include mobile-padding;
         line-height: 1.5;
         padding: 0;
-        // padding-bottom: 0;
-        // padding-top: 0;
-        // padding-left: 0;
-        // padding-right: 0;
         @include desktop{
           font-size: 1rem;
         }

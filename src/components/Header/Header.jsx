@@ -6,8 +6,7 @@ import Btn from "../Button/Btn";
 import upload from "../../assets/icons/upload.svg";
 import search from "../../assets/icons/search.svg";
 import { Link } from "react-router-dom";
-//sprint2
-//header including logo, input, button ,image
+
 export default function Header() {
   return (
     <header className="main-header">
@@ -36,7 +35,7 @@ export default function Header() {
               src={upload}
               alt="upload-image"
             />
-           <Btn text="UPLOAD" />
+            <Btn text="UPLOAD" />
           </Link>
           <img
             className="main-header__form-img"

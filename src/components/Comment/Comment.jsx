@@ -9,9 +9,6 @@ export default function Comment() {
       <div className="comment-heading">
         <h2 className="comment-heading__text">3 Comments</h2>
       </div>
-      {/* <div className="comment-subheading">
-        <h3 className="comment-subheading__subtext">Join The Conversation</h3>
-      </div> */}
       <div className="comment__img-textarea-btn">
         <div className="comment__img-textarea">
           <div className="comment__img">

@@ -28,10 +28,21 @@
     padding-bottom: 2rem;
     padding-top: 2rem;
     border-bottom: 1px solid $primary-color6;
+    @include tablet{
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
     &-img {
       @include mob-body-font($primary-color6);
       font-family: "avenir-bold";
       margin-top: 4rem;
+      @include tablet{
+        @include mobile-padding;
+        padding-top: 0;
+        padding-left: 0;
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
     }
   }
   &__img {
@@ -41,11 +52,17 @@
     @include tablet{
       height: 20rem;
       width: 50%;
+      margin-left: 2rem;
+      margin-right: 2rem;
     }
   }
   &__form {
     display: flex;
     flex-direction: column;
+    @include tablet{
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
     &-label {
       @include mob-body-font($primary-color6);
       font-family: "avenir-bold";

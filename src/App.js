@@ -7,7 +7,6 @@ import views from "../src/assets/icons/views.svg";
 import likes from "../src/assets/icons/likes.svg";
 import mohanImage from "../src/assets/images/Mohan-muruge.jpg";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 class App extends React.Component {
   state = {
@@ -37,7 +36,6 @@ class App extends React.Component {
 
   // get a single video by its ID
   getVideoById(id) {
-    console.log(id);
     axios
       .get(
         `https://project-2-api.herokuapp.com/videos/${id}?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5`

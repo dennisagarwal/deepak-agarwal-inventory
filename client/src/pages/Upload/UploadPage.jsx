@@ -20,8 +20,9 @@ function UploadPage() {
     if (title === "" || description === "") {
       alert("Please fill in all required details");
     } else {
-      alert("Submitted Successfully");
-      window.location="/";
+      // alert("Submitted Successfully");
+      // window.location="/";
+      redirectHome();
     }
   };
   return (

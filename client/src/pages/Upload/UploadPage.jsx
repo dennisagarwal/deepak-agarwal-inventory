@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 import { createRef } from "react";
 
 function UploadPage() {
+  function redirectHome(){
+    alert ("Redirecting");
+    window.location.href = "/";
+  }
   const formRef = createRef();
   const handleSubmit = () => {
     const form = formRef.current;
@@ -17,6 +21,7 @@ function UploadPage() {
       alert("Please fill in all required details");
     } else {
       alert("Submitted Successfully");
+      window.location="/";
     }
   };
   return (

@@ -1,6 +1,8 @@
 //common JS import syntax
 const express = require('express');
 const videoRoutes = require('./routes/videos')
+require('dotenv').config()
+const {PORT}=process.env
 const app= express();
 const PORT = 9001;//declaring the port
 const cors = require('cors');
@@ -16,7 +18,6 @@ const fs = require("fs"); //node-file system module, save data to the file
 //       next();
 //   }
 // }
-
 
 // app.use(express.json());
 
@@ -37,6 +38,7 @@ app.use('/videos', videoRoutes);
 // });
 // //ES module syntax
 // //import axios from "axios";
+
 
 // axios.get(`https://project-2-api.herokuapp.com/videos?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5`).then((response) => {
 //   // console.log(response.data);

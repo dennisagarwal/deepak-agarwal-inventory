@@ -1,12 +1,13 @@
 //common JS import syntax
 const express = require('express');
 const app= express();
-const PORT = 9001;
+const PORT = 9001;//declaring the port
 const cors = require('cors');
 const axios = require("axios");
-const fs = require("fs"); //node-file system module
+const fs = require("fs"); //node-file system module, save data to the file
 
-const PORT= 9001;
+
+console.log(process.argv);
 //8080, 4200, 5000 are usually common port numbers people use for servers
 app.listen(PORT,function(){
   //dont use 23 or 80
@@ -17,8 +18,27 @@ app.listen(PORT,function(){
 //ES module syntax
 //import axios from "axios";
 
-axios.get(`https://project-2-api.herokuapp.com`).then((response) => {
+axios.get(`https://project-2-api.herokuapp.com/videos?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5`).then((response) => {
+  // console.log(response.data);
+  //to create a file video, convert to stingify, if error console log the error
   fs.writeFile(`./videos`, JSON.stringify(response.data), (error) => {
+    if (error) {
+      console.log(error);
+      return;
+    }
+    console.log("file return successfully");
+  });
+})
+.catch((error)=>{
+  console.log(error);
+});
+
+let id=process.argv[2];
+axios.get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5`).then((response) => {
+  // console.log(response.data);
+  //to create a file video, convert to stingify, if error console log the error
+  //write to file using File System Module
+  fs.writeFile(`./${id}Id`, JSON.stringify(response.data), (error) => {
     if (error) {
       console.log(error);
       return;

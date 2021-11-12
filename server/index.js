@@ -1,14 +1,15 @@
 //common JS import syntax
 const express = require('express');
 const videoRoutes = require('./routes/videos')
-require('dotenv').config()
-const {PORT}=process.env
+// const uploadRoutes=require('./routes/upload')
+require('dotenv').config();
+const PORT=process.env.PORT||8080;
 const app= express();
-const PORT = 9001;//declaring the port
+// const PORT = 9001;declaring the port
 const cors = require('cors');
 const axios = require("axios");
 const fs = require("fs"); //node-file system module, save data to the file
-
+// const uoload = require('path');
 
 // function deleteRouteMiddleware(req, res, next) {
 //   if (req.method === "DELETE") {
@@ -19,26 +20,19 @@ const fs = require("fs"); //node-file system module, save data to the file
 //   }
 // }
 
-// app.use(express.json());
 
+app.use(cors());
 
-// console.log(process.argv);
-//8080, 4200, 5000, 9001 are usually common port numbers people use for servers
+app.use(express.json());
+app.use(express.static('public'));
+app.use('/', videoRoutes);
+// app.use('/uploads', uploadRoutes);
+
 app.listen(PORT,function(){
   //dont use 23 or 80
   //if u r using react avoid 3000
-  console.log("my server is running")
+  console.log("my server is running "+ PORT)
 })
-
-
-app.use('/videos', videoRoutes);
-
-// app.get("/", function(request,response){
-// response.send("Hello");
-// });
-// //ES module syntax
-// //import axios from "axios";
-
 
 // axios.get(`https://project-2-api.herokuapp.com/videos?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5`).then((response) => {
 //   // console.log(response.data);

@@ -1,84 +1,98 @@
-const { response } = require('express');
-const express= require('express');
+// const { response } = require('express');
+const express = require("express");
 const router = express.Router();
+const fs = require("fs");
+const { v4: uuidv4 } = require('uuid');
 
-const videoData=[{
-  "id": "84e96018-4022-434e-80bf-000ce4cd12b8",
-  "title": "BMX Rampage: 2021 Highlights",
-  "channel": "Red Cow",
-  "image": "https://i.imgur.com/l2Xfgpl.jpg"
-  },
-  {
-  "id": "c05b9a93-8682-4ab6-aff2-92ebb4bbfc14",
-  "title": "Become A Travel Pro In One Easy Lesson",
-  "channel": "Todd Welch",
-  "image": "https://i.imgur.com/5qyCZrD.jpg"
-  },
-  {
-  "id": "25ce5d91-a262-4dcf-bb87-42b87546bcfa",
-  "title": "Les Houches The Hidden Gem Of The Chamonix",
-  "channel": "Cornelia Blair",
-  "image": "https://i.imgur.com/yFS8EBr.jpg"
-  },
-  {
-  "id": "b6f35f03-7936-409b-bd2a-446bcc5f30e7",
-  "title": "Travel Health Useful Medical Information For",
-  "channel": "Glen Harper",
-  "image": "https://i.imgur.com/MMDMgD7.jpg"
-  },
-  {
-  "id": "1b964601-a6dd-4fcc-b5f3-1000338c9557",
-  "title": "Cheap Airline Tickets Great Ways To Save",
-  "channel": "Emily Harper",
-  "image": "https://i.imgur.com/ibLw5q5.jpg"
-  },
-  {
-  "id": "9c268c0a-83dc-4b96-856a-bb5ded2772b1",
-  "title": "Take A Romantic Break In A Boutique Hotel",
-  "channel": "Ethan Owen",
-  "image": "https://i.imgur.com/7rD6Mf6.jpg"
-  },
-  {
-  "id": "fc5261d1-58a0-47e4-9c19-2b7a1715fa1b",
-  "title": "Choose the Perfect Accommodations",
-  "channel": "Lydia Perez",
-  "image": "https://i.imgur.com/0hi3N4B.jpg"
-  },
-  {
-  "id": "99478bed-6428-49ed-8eaa-f245a5414336",
-  "title": "Cruising Destination Ideas",
-  "channel": "Timothy Austin",
-  "image": "https://i.imgur.com/DDJNZNw.jpg"
-  },
-  {
-  "id": "76ca28c0-7dea-4553-887f-8e5129a80fc3",
-  "title": "Train Travel On Track For Safety",
-  "channel": "Scotty Cranmer",
-  "image": "https://i.imgur.com/i6S8m7I.jpg"
-  }]
+const images = (request, response) => {
+  const videoData = fs.readFileSync("./data/videosdetails.json");
+  const parsedVideoData = json.parse(videoData);
+  return parsedVideoData;
+};
 
-router.route("/")
-.get((request,response)=>{
-  const videos={
-    videos: videoData
-  };
-  response.json(videos);
-})
-.post((request,response)=>{
-const video = request.body.video;
-videoData.push(video);
-res.statusMessage(201).send("video added to database");
-})
+/**
+ * Get all videos
+ */
+router.get("/videos", (request, response) => {
+  fs.readFile("./data/videosdetails.json", "utf8", (err, data) => {
+    if (err) {
+      console.error(err);
+      response.json({ message: "error getting video data" });
+    } else {
+      response.json(JSON.parse(data));
+    }
+  });
+});
 
+/**
+ * Get single video by id
+ */
+router.get("/videos/:id", (request, response) => {
+  console.log(request.params.id);
+  fs.readFile("./data/videosdetails.json", "utf8", (err, data) => {
+    if (err) {
+      console.error(err);
+      response.json({ message: "error getting video data" });
+    }
 
-router.get("/:id", (request,response)=>{
-  const videoId= request.params.id;
-  const foundVideoData = videoData.find(video=> video.id === videoId);
-  if(foundVideoData){
-    response.json(foundVideoData);
-  }else{
-    response.status(404).json({message:"video not found"})
-  }
- });
+    const videoData = JSON.parse(data);
+    const foundVideo = videoData.find((video) => video.id == request.params.id);
+    if (!foundVideo) {
+      response.json({ message: "error getting video data" });
+    } else {
+      response.json(foundVideo);
+    }
+  });
+});
+
+// router.post('/uploads',(request,response)=>{
+//   // const video = request.body.video;
+
+//   const title = request.body.title;
+//   console.log( request.body.title)
+//   const description = request.body.descripton;
+//   videoData.push(title);
+//   videoData.push(description);
+//   response.statusMessage(201).send("video added to database");
+//   })
+// router.post('/uploads',(request,response)=>{
+// const video = request.body.video;
+// const title = request.body.title;
+// fs.writeFile(
+//   './data/videosdetails.json',
+//   JSON.stringify(title)),()=>{
+// fs.writeFile('./data/videosdetails.json', "hello",
+// response.send("hello"))
+// console.log( req.body.title)
+// const title = request.body.title;
+// response.send(
+
+// console.log(title))
+//   fs.writeFile(
+//     './data/videosdetails.json',
+//     console.log(request.body.title),
+//     (error) => {
+//       if (error) {
+//         console.log(error);
+//         return;
+//       }
+//       console.log("file return successfully");
+//     }
+//   );
+// })
+uploadsPage = [];
+router.post("/uploads", (request, response) => {
+  const title = request.body.title;
+  const description = request.body.descripton;
+
+  uploadsPage.push({ id: "uuidv4()", title, description, channel: "sbc" });
+  console.log(request.body.title);
+});
+
+// const description = request.body.descripton;
+// videoData.push(title);
+// videoData.push(description);
+// response.statusMessage(201).send("video added to database");
+// })
 
 module.exports = router;

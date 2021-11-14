@@ -25,8 +25,13 @@ app.use(cors());
 
 app.use(express.json());
 app.use(express.static('public'));
+
 app.use('/', videoRoutes);
-// app.use('/uploads', uploadRoutes);
+
+
+app.get('/*', (request,response)=>{
+  response.send('<img src="images/pnf404.jpg">');
+})
 
 app.listen(PORT,function(){
   //dont use 23 or 80

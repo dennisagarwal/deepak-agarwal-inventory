@@ -2,13 +2,13 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require("uuid");
 
-const images = (request, response) => {
-  const videoData = fs.readFileSync("./data/videosdetails.json");
-  const parsedVideoData = json.parse(videoData);
-  return parsedVideoData;
-};
+// const images = (request, response) => {
+//   const videoData = fs.readFileSync("./data/videosdetails.json");
+//   const parsedVideoData = json.parse(videoData);
+//   return parsedVideoData;
+// };
 
 /**
  * Get all videos
@@ -45,54 +45,37 @@ router.get("/videos/:id", (request, response) => {
   });
 });
 
-// router.post('/uploads',(request,response)=>{
-//   // const video = request.body.video;
+router.post("/videos", (request, response) => {
+  console.log("posting upload");
+  fs.readFile("./data/videosdetails.json", "utf8", (err, data) => {
+    if (err) {
+      console.error(err);
+      response.json({ message: "error getting video data" });
+    } else {
+      console.log("attempting to write file");
+      // response.json(JSON.parse(data));
+      const title = request.body.title;
+      const description = request.body.description;
+      let vidData = JSON.parse(data);
+      vidData.push({
+        id: uuidv4(),
+        title: `${title}`,
+        channel: "Alpha",
+        image:"http://localhost:8080/images/uploadVideoPreview.jpg",
+        description: `${description}`,
+        views: "67,567",
+        likes: "75,985",
+        duration: "4:20",
+        video: "https://project-2-api.herokuapp.com/stream",
+        timestamp: 1632344461000,
+        comments: []
+      });
 
-//   const title = request.body.title;
-//   console.log( request.body.title)
-//   const description = request.body.descripton;
-//   videoData.push(title);
-//   videoData.push(description);
-//   response.statusMessage(201).send("video added to database");
-//   })
-// router.post('/uploads',(request,response)=>{
-// const video = request.body.video;
-// const title = request.body.title;
-// fs.writeFile(
-//   './data/videosdetails.json',
-//   JSON.stringify(title)),()=>{
-// fs.writeFile('./data/videosdetails.json', "hello",
-// response.send("hello"))
-// console.log( req.body.title)
-// const title = request.body.title;
-// response.send(
-
-// console.log(title))
-//   fs.writeFile(
-//     './data/videosdetails.json',
-//     console.log(request.body.title),
-//     (error) => {
-//       if (error) {
-//         console.log(error);
-//         return;
-//       }
-//       console.log("file return successfully");
-//     }
-//   );
-// })
-uploadsPage = [];
-router.post("/uploads", (request, response) => {
-  const title = request.body.title;
-  const description = request.body.descripton;
-
-  uploadsPage.push({ id: "uuidv4()", title, description, channel: "sbc" });
-  console.log(request.body.title);
+      fs.writeFileSync("./data/videosdetails.json", JSON.stringify(vidData)),
+        console.log(request.body.title);
+      response.send("file written successfully");
+    }
+  });
 });
-
-// const description = request.body.descripton;
-// videoData.push(title);
-// videoData.push(description);
-// response.statusMessage(201).send("video added to database");
-// })
 
 module.exports = router;

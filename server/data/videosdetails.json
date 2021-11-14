@@ -300,25 +300,7 @@
       }
     ]
   },
-  {
-    "id": "be6da777-b4a1-4f9e-9ac8-267d30e4b888",
-    "title": "dfsdf",
-    "description": "fsd fsdfs",
-    "channel": "sbc"
-  },
-  {
-    "id": "0fc5b3d5-000f-4c8c-9275-475cf5675858",
-    "title": "Test 5",
-    "description": "Test 5 Description",
-    "channel": "sbc"
-  },
-  {
-    "id": "a341d11f-0163-4eaa-bd1c-85199b7a1105",
-    "title": "test 6",
-    "description": "test 6 results",
-    "channel": "sbc"
-  },
-  {
+   {
     "id": "7bef4560-3b7d-4968-8c6d-4f5f453f497d",
     "title": "fgdg",
     "channel": "Alpha",

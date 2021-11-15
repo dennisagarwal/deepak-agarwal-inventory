@@ -1,13 +1,15 @@
 import Header from "./components/Header/Header";
 import Comment from "./components/Comment/Comment";
 import Video from "./components/Video/Video";
-import "./styles/App.scss";
+import "./App.scss";
 import React from "react";
 import views from "../src/assets/icons/views.svg";
 import likes from "../src/assets/icons/likes.svg";
 import mohanImage from "../src/assets/images/Mohan-muruge.jpg";
 import axios from "axios";
 
+// correction for sprint-2
+// const api="db19a50e-b6fd-4717-9083-77b0d60253b5";
 class App extends React.Component {
   state = {
     videos: [],
@@ -23,7 +25,9 @@ class App extends React.Component {
   getVideos() {
     axios
       .get(
-        "https://project-2-api.herokuapp.com/videos?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5"
+        "/videos"
+        //keeping api links for reference
+        // "https://project-2-api.herokuapp.com/videos?api_key=`${api}`"
       )
       .then((response) => {
         this.setState({
@@ -38,8 +42,10 @@ class App extends React.Component {
   getVideoById(id) {
     axios
       .get(
-        `https://project-2-api.herokuapp.com/videos/${id}?api_key=db19a50e-b6fd-4717-9083-77b0d60253b5`
-      )
+         //keeping api links for reference
+        // `https://project-2-api.herokuapp.com/videos/${id}?api_key=${api}`
+        `/videos/${id}`
+        )
       .then((response) => {
         this.setState({
           activeVideo: response.data,
@@ -107,14 +113,14 @@ class App extends React.Component {
                         alt="view-image"
                       />
                       <p className="BMX__video--like-text">
-                        {this.state.activeVideo.likes}
+                        {activeVideo.likes}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="BMX__video--desc">
                   <p className="BMX__video--desc-text">
-                    {this.state.activeVideo.description}
+                    {activeVideo.description}
                   </p>
                 </div>
                 <Comment />

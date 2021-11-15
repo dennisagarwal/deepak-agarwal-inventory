@@ -8,9 +8,15 @@ import search from "../../assets/icons/search.svg";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+  function redirectHome(){
+  window.location = "/";
+}
+const handleSubmit = (event) => {
+  redirectHome();
+    }
   return (
     <header className="main-header">
-      <Link to="/" className="main-header__logo">
+      <Link to="/" onClick={handleSubmit} className="main-header__logo">
         <img src={logo} alt="app logo" />
       </Link>
       <form className="main-header__form">

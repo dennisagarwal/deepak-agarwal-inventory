@@ -1,7 +1,7 @@
-@use "./partials/normalize" as *;
-@use "./partials/variables" as *;
-@use "./partials/typography" as *;
-@use "./partials/mixins" as *;
+@use "./styles/partials/normalize" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/mixins" as *;
 
 .page {
   @include desktop {
@@ -63,6 +63,9 @@
         height: 18rem;
         @include tablet {
           height: 26rem;
+        }
+        @include desktop{
+          width:1280px;
         }
       }
       @include tablet {

@@ -6,22 +6,26 @@ import Btn from "../../components/Button/Btn";
 import Header from "../../components/Header/Header";
 import { Link } from "react-router-dom";
 import { createRef } from "react";
+import axios from "axios";
+
+const PORT=8080;
 
 function UploadPage() {
   function redirectHome(){
-    alert ("Redirecting");
-    window.location.href = "/";
+    // event.preventDefault()
+    alert ("Video Upload Successfully");
+    window.location = "/";
   }
   const formRef = createRef();
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
     const form = formRef.current;
     const title = form.title.value;
     const description = form.description.value;
+    console.log(description);
     if (title === "" || description === "") {
       alert("Please fill in all required details");
     } else {
-      // alert("Submitted Successfully");
-      // window.location="/";
+      axios.post(`/videos`, {title, description})
       redirectHome();
     }
   };
@@ -65,14 +69,14 @@ function UploadPage() {
             <Link to="/" className="upload__form-anchor2" href={App}>
               CANCEL
             </Link>
-            <button onClick={handleSubmit} className="upload__form-button">
+            <Link to="/" onClick={handleSubmit} className="upload__form-button">
               <img
                 className="upload__form-button-img"
                 src={publish}
                 alt="video-thumbnail-image"
               />
               <Btn text="PUBLISH" />
-            </button>
+            </Link>
             <Link to="/" className="upload__form-anchor1" href={App}>
               CANCEL
             </Link>

@@ -2,11 +2,17 @@ import "./Comment.scss";
 import mohanImage from "../../assets/images/Mohan-muruge.jpg";
 import Btn from "../Button/Btn";
 import addComment from "../../assets/icons/add_comment.svg";
-
-export default function Comment() {
+// let i = 0;
+export default function Comment(props) {
   return (
     <div className="comment">
       <div className="comment-heading">
+{/*
+if ({props.id==="76ca28c0-7dea-4553-887f-8e5129a80fc3"}){
+  i===2
+}else{
+  i===3
+} */}
         <h2 className="comment-heading__text">3 Comments</h2>
       </div>
       <div className="comment__img-textarea-btn">

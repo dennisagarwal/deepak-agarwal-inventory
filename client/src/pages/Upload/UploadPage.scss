@@ -143,6 +143,7 @@
 
     }
     &-button {
+      text-decoration: none;
       display: flex;
       flex-direction: row;
       background-color: $primary-color1;
@@ -154,7 +155,7 @@
       @include tablet {
         display: flex;
         width: 26%;
-        height: 4rem;
+        height: 2rem;
       }
       @include desktop{
         width: 30%;

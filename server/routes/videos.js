@@ -4,12 +4,6 @@ const router = express.Router();
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 
-// const images = (request, response) => {
-//   const videoData = fs.readFileSync("./data/videosdetails.json");
-//   const parsedVideoData = json.parse(videoData);
-//   return parsedVideoData;
-// };
-
 /**
  * Get all videos
  */
@@ -46,7 +40,6 @@ router.get("/videos/:id", (request, response) => {
 });
 
 router.post("/videos", (request, response) => {
-  console.log("posting upload");
   fs.readFile("./data/videosdetails.json", "utf8", (err, data) => {
     if (err) {
       console.error(err);
@@ -60,7 +53,7 @@ router.post("/videos", (request, response) => {
       vidData.push({
         id: uuidv4(),
         title: `${title}`,
-        channel: "Alpha",
+        channel: "Emily Harper",
         image:"http://localhost:8080/images/uploadVideoPreview.jpg",
         description: `${description}`,
         views: "67,567",
@@ -68,7 +61,27 @@ router.post("/videos", (request, response) => {
         duration: "4:20",
         video: "https://project-2-api.herokuapp.com/stream",
         timestamp: 1632344461000,
-        comments: []
+        comments: [ {
+          "id": "c93c16f0-4795-45d1-b0da-21696d54f25a",
+          "name": "Fionna Miller",
+          "comment": "Location location location! It blows my mind how many people don’t understand this, but you’ve summed it up so well here. The next time I travel, I’ll be on the beachfront.",
+          "likes": 6,
+          "timestamp": 1631816492000
+        },
+        {
+          "id": "99938bd4-67f9-4404-ad3e-b23a6ad05717",
+          "name": "Suzie Maxwell",
+          "comment": "I wish I could print out a video to show to my travel agent. Oh, what am I saying – they have a computer! Much appreciated advice, I can’t wait to put it into action soon.",
+          "likes": 1,
+          "timestamp": 1631799181000
+        },
+        {
+          "id": "fc2e9a8c-7daa-4e14-980d-5467ca2054ec",
+          "name": "Alasie Rivers",
+          "comment": "From five-star hotels to the cheapest spots – wherever you like to stay, THIS is the way to do it! I’ll take sunlight and a cozy reading corner over a pool any day of the week.",
+          "likes": 0,
+          "timestamp": 1631716921000
+        }]
       });
 
       fs.writeFileSync("./data/videosdetails.json", JSON.stringify(vidData)),

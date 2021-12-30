@@ -9,10 +9,10 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={App} />
-        <Route path="/videos" exact component={App} />
-        <Route path="/videos/:id" exact component={App} />
-        <Route path="/uploads" exact component={UploadPage} />
+        <Route path="/" exact component={UploadPage} />
+        {/* <Route path="/videos" exact component={App} />
+        <Route path="/videos/:id" exact component={App} /> */}
+        <Route path="/uploads" exact component={App} />
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,

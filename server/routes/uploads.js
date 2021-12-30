@@ -7,8 +7,8 @@ const { v4: uuidv4 } = require("uuid");
 /**
  * Get all videos
  */
-router.get("/videos", (request, response) => {
-  // router.get("/uploads", (request, response) => {
+// router.get("/videos", (request, response) => {
+  router.get("/uploads", (request, response) => {
   fs.readFile("./data/videosdetails.json", "utf8", (err, data) => {
     if (err) {
       console.error(err);
@@ -19,8 +19,8 @@ router.get("/videos", (request, response) => {
   });
 });
 
-router.post("/videos", (request, response) => {
-  // router.post("/uploads", (request, response) => {
+// router.post("/videos", (request, response) => {
+  router.post("/uploads", (request, response) => {
   fs.readFile("./data/videosdetails.json", "utf8", (err, data) => {
     if (err) {
       console.error(err);
@@ -28,7 +28,7 @@ router.post("/videos", (request, response) => {
     } else {
       console.log("attempting to write file");
       // response.json(JSON.parse(data));
-      const part = request.body.part;
+      const title = request.body.title;
       const description = request.body.description;
       const tag = request.body.tag;
       const rack = request.body.rack;
@@ -37,7 +37,7 @@ router.post("/videos", (request, response) => {
       let vidData = JSON.parse(data);
       vidData.push({
         id: uuidv4(),
-        part: `${part}`,
+        title: `${title}`,
         tag: `${tag}`,
         description: `${description}`,
         rack: `${rack}`,
@@ -47,7 +47,7 @@ router.post("/videos", (request, response) => {
       });
 
       fs.writeFileSync("./data/videosdetails.json", JSON.stringify(vidData)),
-        console.log(request.body.part);
+        console.log(request.body.title);
       response.send("file written successfully");
     }
   });

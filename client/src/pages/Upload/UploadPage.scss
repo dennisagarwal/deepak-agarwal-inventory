@@ -10,81 +10,14 @@
   @include tablet {
     padding: 0;
   }
-  &__header {
-    border-bottom: 1px solid $primary-color6;
-    padding-bottom: 2rem;
-    // @include mobile-padding;
-    @include tablet {
-      @include tablet-padding;
-      padding: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-  &__section {
-    @include desktop {
-      display: flex;
-      flex-direction: row;
-    }
-    &--div {
-      @include desktop {
-        width: 40%;
-      }
-    }
-  }
-  &__heading {
-    @include mob-page-header-font($primary-color2);
-    font-size: 2rem;
-    font-family: "avenir-bold";
-    padding-bottom: 2rem;
-    padding-top: 2rem;
-    border-bottom: 1px solid $primary-color6;
-    @include tablet {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-    @include desktop {
-      margin-left: 14rem;
-      margin-right: 14rem;
-    }
-    &-img {
-      @include mob-body-font($primary-color6);
-      font-family: "avenir-bold";
-      margin-top: 4rem;
-      @include tablet {
-        @include mobile-padding;
-        padding-top: 0;
-        padding-left: 0;
-        margin-left: 2rem;
-        margin-right: 2rem;
-      }
-      @include desktop {
-        margin: 0 0 0 14rem;
-        padding-right: 0;
 
-      }
-    }
-  }
-  &__img {
-    width: 100%;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-    @include tablet {
-      height: 20rem;
-      width: 50%;
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-    @include desktop {
-      margin-left:14rem;
-      margin-right: 0;
-      margin-bottom: 0;
-      height: 13rem;
-    }
-  }
+
+
+
   &__form {
     display: flex;
     flex-direction: column;
+    margin-top:1rem;
     @include tablet {
       margin-left: 2rem;
       margin-right: 2rem;
@@ -125,23 +58,7 @@
         height: 3rem;
       }
     }
-    &-buttons-div {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      @include tablet {
-        width: 100%;
-        border-top: 1px solid $primary-color6;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-      }
-      @include desktop{
-        width: 140%;
-        margin-left: -40%;
-      }
 
-    }
     &-button {
       text-decoration: none;
       display: flex;
@@ -165,29 +82,7 @@
         height: 2rem;
       }
     }
-    &-anchor1 {
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-family: "avenir-bold";
-      color: $primary-color1;
-      @include mobile-padding;
-      margin: 1rem auto;
-      @include tablet {
-        display: none;
-      }
-    }
-    &-anchor2 {
-      text-decoration: none;
-      display: none;
-      @include tablet {
-        font-size: 1.5rem;
-        font-family: "avenir-bold";
-        color: $primary-color1;
-        @include mobile-padding;
-        margin: 1rem;
-        margin-right: 6rem;
-        display: flex;
-      }
+
     }
   }
-}
+
